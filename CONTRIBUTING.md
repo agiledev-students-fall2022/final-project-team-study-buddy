@@ -6,7 +6,7 @@ Unfortunately, our team's schedules are not that compatible so we plan to meet v
 
 _Resolving Conflicts_
 
-Disagreements on direction? On major conflicts, get input from everyone and weigh the opinion of the person with the most experience more. Since we have an odd number of team members we can vote and majority wins. On minor conflicts, 
+Disagreements on direction? Everyone will have input but we will also weigh the opinion of the person with the most experience or expertise more. Since we have an odd number of team members we can vote and majority wins.
 
 What to do when a member is failing to deliver on their obligations to the team: Members are expected to report regularly and especially in case unexpected events intervene with the workflow. If a member goes MIA, the other team members will give them three days to reach out, a full week before contacting the professor.
 how quickly team members are expected to respond to messages directed at them.
