@@ -13,9 +13,8 @@ With regards to directional disagreements:
 - On minor conflicts, since we have an odd number of team members, we can vote on a solution and always have at least a simple majority.
 
 Members are expected to report regularly and especially in case unexpected events intervene with the workflow. If a member goes MIA, or is otherwise failing to deliver on their obligations to the team, the other team members will give them three days to reach out, a full week before contacting the professor.
-how quickly team members are expected to respond to messages directed at them.
 
-Messages directed at a person should be responded to by the team member within 24 hours.
+Messages directed at a team member should be answered within 24 hours.
 
 ### Meeting Times
 
