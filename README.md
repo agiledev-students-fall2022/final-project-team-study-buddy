@@ -1,20 +1,37 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=8731186&assignment_repo_type=AssignmentRepo)
-# Project Repository
+# Study Buddy
 
-This repository will be used for team projects.
+## Description
 
-Several sets of instructions are included in this repository. They should each be treated as separate assignments with their own due dates and sets of requirements.
+*Study Buddy* is a way for students to ensure they can always find the resources they need with just a quick search. The app will be a hub for finding organizations that provide services like computer/internet usage, printing, copying, etc. Organizations will also be able to "claim" their profiles to provide a more accurate description of their services.
 
-1. See the [App Map & Wireframes](instructions-0a-app-map-wireframes.md) and [Prototyping](./instructions-0b-prototyping.md) instructions for the requirements of the initial user experience design of the app.
+At its most basic implementation, *Study Buddy* will be a web app able to show students where free Wi-Fi, cheap/free printing, and study spaces are available. Clicking any of the services will launch a map that allows the user to show them nearby. Venues will also have their own information pages.
 
-1. Delete the contents of this file and replace with the contents of a proper README.md, as described in the [project setup instructions](./instructions-0c-project-setup.md)
+## Core Team Members
 
-1. See the [Sprint Planning instructions](instructions-0d-sprint-planning.md) for the requirements of Sprint Planning for each Sprint.
+- Shay Gyawali: [GitHub](https://github.com/shaygyawali) | [Personal Website](http://shaygyawali.me)
+- Ben Schwartz: [GitHub](https://github.com/bls1999) | [Jiggmin's Village](https://jiggmin2.com/)
+- Brandon Somoza: [GitHub](https://github.com/BrandonSomoza)
+- Kevin Wu: [GitHub](https://github.com/kevin1289) | [Python Anywhere](https://kevinwu.pythonanywhere.com/)
+- Abigail Zhou: [GitHub](https://github.com/abigailzhou03)
 
-1. See the [Front-End Development instructions](./instructions-1-front-end.md) for the requirements of the initial Front-End Development.
+## Project History
 
-1. See the [Back-End Development instructions](./instructions-2-back-end.md) for the requirements of the initial Back-End Development.
+Way before we had the idea for *Study Buddy*, we knew we wanted to make an app that would have a positive impact in a tangible way. During our first brainstorming meeting, one of our teammates was talking about how difficult it could be to find Wi-Fi or a quiet place to study when unavailable at home. They went on to mention that having a place to find those resources would have been really useful to them. This issue resonated with the rest of the group, so we decided it was the problem we wanted to solve!
 
-1. See the [Database Integration instructions](./instructions-3-database.md) for the requirements of integrating a database into the back-end.
+Upon doing some more research, we discovered that millions of US students struggle to complete their schoolwork due to not being able to find or access the resources they need to succeed. This can stem from economic/circumstantial hardship, learning disabilities, or simply a lack of time management skills (which can lead to the stressful task of trying to find a printer two minutes before class starts).
 
-1. See the [Deployment instructions](./instructions-4-deployment.md) for the requirements of deploying an app.
+## Contributions
+
+For a guide for contributing, please reference [CONTRIBUTING.md](https://github.com/agiledev-students-fall2022/final-project-team-study-buddy/blob/master/CONTRIBUTING.md).
+
+## Installation
+
+WIP
+
+## Other Resources
+
+WIP
+
+## Anything Else?
+
+Nothing yet! Thanks for your support.
