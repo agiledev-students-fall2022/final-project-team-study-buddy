@@ -31,7 +31,11 @@ We will utilize [GitHub Projects](https://github.com/agiledev-students-fall2022/
 
 ## Rules
 
-
+- If a member will miss a meeting, they must notify at least 24 hours in advance.
+- If a member wants to integrate a new or different library, they must notify the other group members first.
+- Every merge must first be reviewed by another group member.
+- During the meeting, when assigning user stories members must come to a general consensus on and estimate of how long the story should take.
+- In the case where a user story is not completed on time, either the product owner or scrum master should pick up the slack.
 
 ## Dev Environment
 
