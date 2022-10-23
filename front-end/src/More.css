@@ -6,11 +6,17 @@
 
 .map {
     overflow: hidden;
-    padding-top: 160px;
-    flex-basis: 80%;
+    flex-basis: 40%;
+    padding-bottom: 190px;
 }
 
 .map iframe{
     position: absolute;
-    width: 40%;
+    width: 35%;
+}
+
+.text {
+    padding-top: 150px;
+    font-size: 20px;
+    flex-basis: 25%;
 }
