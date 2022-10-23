@@ -19,7 +19,7 @@ function More() {
         </div>
 
         {/* test next to map */}
-        <div className='text'>
+        <div className='details'>
           <h2> El Barrista Cafe </h2>
           <p> New York, NY 0.5 miles away</p>
           <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 

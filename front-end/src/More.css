@@ -1,22 +1,28 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }
 
 .map {
+    position: relative;
+    padding-bottom: 75%;
     overflow: hidden;
-    flex-basis: 40%;
-    padding-bottom: 190px;
+    padding-left: 150px;
+    padding-top: 90px;
 }
 
 .map iframe{
+    padding-top: 150px;
+    padding-left: 150px;
     position: absolute;
-    width: 35%;
+    top: 0;
+    left: 0;
+    width: 65% !important;
+    height: 65% !important;
 }
 
-.text {
-    padding-top: 150px;
-    font-size: 20px;
-    flex-basis: 25%;
+.details {
+    padding-top: 130px;
+    width: 50%;
 }
