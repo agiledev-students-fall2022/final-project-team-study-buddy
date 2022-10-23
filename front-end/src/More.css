@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.map {
+    overflow: hidden;
+    padding-top: 160px;
+    flex-basis: 80%;
+}
+
+.map iframe{
+    position: absolute;
+    width: 40%;
+}
