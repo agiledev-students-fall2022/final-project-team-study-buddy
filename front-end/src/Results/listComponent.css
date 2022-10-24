@@ -4,4 +4,46 @@
   outline-color: gray;
   outline-width: 2px;
   text-align: left;
+  padding-bottom: 10px;
+}
+
+#results-logos {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+}
+
+#filter-logo {
+  display: block;
+  margin: 0 5px;
+  width: 2%;
+  height: 2%;
+}
+
+#result-name {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+#results-toggle-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+  height: 100%;
+}
+
+#results-toggle-plus {
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+#results-toggle-minus {
+  margin-right: 10px;
+  margin-top: 30px;
+  width: 50px;
+  height: 10px;
 }
