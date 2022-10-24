@@ -1,3 +1,4 @@
+/* styling map + details container */
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -8,21 +9,77 @@
     position: relative;
     padding-bottom: 75%;
     overflow: hidden;
-    padding-left: 150px;
-    padding-top: 90px;
+    padding-left: 200px;
 }
 
 .map iframe{
-    padding-top: 150px;
-    padding-left: 150px;
     position: absolute;
     top: 0;
     left: 0;
     width: 65% !important;
-    height: 65% !important;
+    height: 75% !important;
+    padding-left: 200px;
+    padding-top: 60px;
 }
 
 .details {
-    padding-top: 130px;
     width: 50%;
+    padding-top: 60px;
+}
+
+
+/* styling icons */
+.icon-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.thumbs-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.placeholder{
+    padding-left: 10px;
+    height: 50%;
+    width: 50%;
+}
+
+.insta-link{
+    height: 4%;
+    width: 4%;
+}
+
+.downvotes{
+    transform: rotate(180deg);
+    height: 90%;
+    width: 50%;
+}
+
+.upvotes{
+    height: 90%;
+    width: 50%;
+}
+
+h1{
+    text-align: center;
+    padding-right: 20px;
+    font-size: 20%;
+}
+
+h2{
+    font-size: 40px;
+}
+
+.logo{
+    height: 6%;
+    width: 6%;
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+p{
+    font-size: 15px;
 }
