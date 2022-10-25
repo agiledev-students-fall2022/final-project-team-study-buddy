@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import studyLogo from "../images/studyLogo.png";
-import printerLogo from "../images/printerLogo.png";
-import wifiLogo from "../images/wifiLogo.png";
-import studyLogoBlur from "../images/studyBlur.png";
-import printerLogoBlur from "../images/printerBlur.png";
-import wifiLogoBlur from "../images/wifiBlur.png";
+import studyLogo from "../images/studyActive.png";
+import printerLogo from "../images/printerActive.png";
+import wifiLogo from "../images/wifiActive.png";
+import studyLogoBlur from "../images/studyInactive.png";
+import printerLogoBlur from "../images/printerInactive.png";
+import wifiLogoBlur from "../images/wifiInactive.png";
 import plus from "../images/plus.png";
 import minus from "../images/minus.png";
 import "./listComponent.css";
