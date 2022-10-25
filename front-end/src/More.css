@@ -22,6 +22,7 @@ h2{
 }
 
 .map {
+    text-align: left;
     position: relative;
     padding-bottom: 75%;
     overflow: hidden;
@@ -35,12 +36,11 @@ h2{
     width: 65% !important;
     height: 75% !important;
     padding-left: 200px;
-    padding-top: 60px;
 }
 
 .details {
+    text-align: left;
     width: 50%;
-    padding-top: 60px;
     overflow: hidden;
 }
 
@@ -81,6 +81,7 @@ h2{
 }
 
 .logo{
+    display: block;
     height: 6%;
     width: 6%;
     padding-top: 40px;
