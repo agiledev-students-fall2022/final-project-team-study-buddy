@@ -11,15 +11,7 @@ const App = (props) => {
         <main className="App-main">
           <Routes>
             {/* a route for the home page */}
-            <Route
-              path="/"
-              default
-              element={
-                <div>
-                  <h1>Study Buddy</h1>
-                </div>
-              }
-            />
+            <Route path="/" element={<Home />} />
 
             {/* a route for more */}
             <Route path="/more" element={<More />} />
