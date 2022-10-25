@@ -1,9 +1,9 @@
 import React from "react";
 import "./Header.css";
-import studyLogo from "../../images/studyActive.png";
+import studyLogo from "../../images/studyLogo.png";
 import logo from "../../images/logo.png";
-import printerLogo from "../../images/printerActive.png";
-import wifiLogo from "../../images/wifiActive.png";
+import printerLogo from "../../images/printerLogo.png";
+import wifiLogo from "../../images/wifiLogo.png";
 
 function Header() {
   return (
