@@ -11,7 +11,10 @@ import wheelchair from './img/wheelchair.png';
 
 function More() {
 	return (
-		<div>
+		<html>
+		<head> 
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		</head>
 		<img src={logo} className='logo'></img>
 		<div className='container'>
 
@@ -107,7 +110,7 @@ function More() {
 					</div>
 				</div>
 			</div>
-			</div>
+			</html>
 	);
 }
 

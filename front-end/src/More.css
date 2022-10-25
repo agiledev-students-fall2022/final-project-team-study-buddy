@@ -1,3 +1,19 @@
+/* styling general html tags */ 
+p{
+    font-size: 15px;
+}
+
+
+h1{
+    text-align: center;
+    padding-right: 20px;
+    font-size: 20%;
+}
+
+h2{
+    font-size: 40px;
+}
+
 /* styling map + details container */
 .container {
     display: grid;
@@ -25,6 +41,7 @@
 .details {
     width: 50%;
     padding-top: 60px;
+    overflow: hidden;
 }
 
 
@@ -63,23 +80,9 @@
     width: 50%;
 }
 
-h1{
-    text-align: center;
-    padding-right: 20px;
-    font-size: 20%;
-}
-
-h2{
-    font-size: 40px;
-}
-
 .logo{
     height: 6%;
     width: 6%;
     padding-top: 40px;
     padding-left: 40px;
-}
-
-p{
-    font-size: 15px;
 }
