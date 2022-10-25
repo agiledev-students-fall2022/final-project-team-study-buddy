@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from 'react';
 import "./Results.css";
 import Header from "./Header/header";
 import Result from "./listComponent";
