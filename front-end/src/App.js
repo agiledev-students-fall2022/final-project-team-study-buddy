@@ -1,8 +1,8 @@
+import "./App.css";
 import Home from "./Home.js";
-import More from "./More.js";
+import More from "./More/More.js";
 import Results from "./Results/Results.js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
 
 const App = (props) => {
   return (
