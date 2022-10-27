@@ -43,8 +43,3 @@ input[type="submit"] {
     height: 30px;
     cursor: pointer;
 }
-
-img.icon {
-    max-width: 50px;
-    cursor: pointer;
-}

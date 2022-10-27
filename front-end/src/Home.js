@@ -10,20 +10,20 @@ const Home = props => {
   return (
     <>
         <div id='container'>
-        <h1 className='title'>Study Buddy</h1>
-        <form action='/results'>
-        <p>
-            <input type='text' name='query' placeholder='Enter ZIP Code' />
-        </p>
-        <p>
-            <Icon type="printer" in_form='yes' />
-            <Icon type="study" in_form='yes' />
-            <Icon type="wifi" in_form='yes' />
-        </p>
-        <p>
-            <input type='submit' value='Go  🔎' title="Search" />
-        </p>
-        </form>
+          <h1 className='title'>Study Buddy</h1>
+          <form action='/results'>
+            <p>
+                <input type='text' name='query' placeholder='Enter ZIP Code' />
+            </p>
+            <p>
+                <Icon type="printer" in_form='yes' />
+                <Icon type="study" in_form='yes' />
+                <Icon type="wifi" in_form='yes' />
+            </p>
+            <p>
+                <input type='submit' value='Go  🔎' title="Search" />
+            </p>
+          </form>
         </div>
     </>
   )
