@@ -4,7 +4,13 @@
   outline-color: gray;
   outline-width: 2px;
   text-align: left;
-  padding-bottom: 10px;
+  padding-bottom: 4px;
+  text-align: left;
+  padding-left: 5px;
+  /* margin-left: 5px;
+  margin-right: 5px; */
+  width: 90vw;
+  margin: auto;
 }
 
 #results-logos {
@@ -16,14 +22,21 @@
 
 #filter-logo {
   display: block;
-  margin: 0 5px;
-  width: 2%;
-  height: 2%;
+  width: 2vw;
+  height: 4vh;
 }
 
 #result-name {
+  padding-top: 2px;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  /* cursor: pointer; */
+}
+
+#result-name b {
+  text-align: left;
+  font-size: 1em;
+  cursor: pointer;
 }
 
 #results-toggle-wrapper {
@@ -31,19 +44,21 @@
   flex-direction: row;
   align-items: right;
   justify-content: right;
-  height: 100%;
+  height: 30px;
 }
 
 #results-toggle-plus {
   margin-right: 10px;
   margin-top: 10px;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 #results-toggle-minus {
   margin-right: 10px;
-  margin-top: 30px;
-  width: 50px;
-  height: 10px;
+  margin-top: 20px;
+  width: 30px;
+  height: 7px;
+  cursor: pointer;
 }
