@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./Home.js";
 import More from "./More.js";
 import Results from "./Results/Results.js";

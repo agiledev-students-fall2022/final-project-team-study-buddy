@@ -15,7 +15,7 @@ function More() {
 		<head> 
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		</head>
-		<img src={logo} className='logo'></img>
+		<img src={logo} className='more-logo'></img>
 		<div className='container'>
 
 			{/* embedded map  */}
@@ -35,8 +35,8 @@ function More() {
 			{/* text next to map */}
 			<div className='details'>
 				<h2 id='title'> El Barrista Cafe <a href='https://www.instagram.com/elbarristanyc/?hl=en'><img src={blackGlobe} className='insta-link'></img></a></h2>
-				<p> New York, NY 0.5 miles away</p>
-				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+				<p id='location'> New York, NY 0.5 miles away </p>
+				<p id='blurb'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
 					labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
 					nisi ut aliquip ex ea commodo consequat.
 				</p>
@@ -55,8 +55,8 @@ function More() {
 								</div>
 								{/* the actual numbers are here  */}
 								<div className='thumbs-container'>
-									<h1>100</h1>
-									<h1>0</h1>
+									<h1 className='num'>100</h1>
+									<h1 className='num'>0</h1>
 								</div>
 						</div>
 
@@ -71,8 +71,8 @@ function More() {
 								</div>
 								{/* the actual numbers are here  */}
 								<div className='thumbs-container'>
-									<h1>56</h1>
-									<h1>24</h1>
+									<h1 className='num'>56</h1>
+									<h1 className='num'>24</h1>
 								</div>
 						</div>
 						
@@ -87,8 +87,8 @@ function More() {
 								</div>
 								{/* the actual numbers are here  */}
 								<div className='thumbs-container'>
-									<h1>10</h1>
-									<h1>6</h1>
+									<h1 className='num'>10</h1>
+									<h1 className='num'>6</h1>
 								</div>
 						</div>
 						
@@ -103,8 +103,8 @@ function More() {
 								</div>
 								 {/* the actual numbers are here  */}
 								<div className='thumbs-container'>
-									<h1 className='ratings'>3</h1>
-									<h1 className='ratings'>4</h1>
+									<h1 className='num'>3</h1>
+									<h1 className='num'>4</h1>
 								</div>
 						</div>
 					</div>
