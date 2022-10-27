@@ -8,6 +8,8 @@ import printerIconBlur from './images/printerInactive.png';
 import studyIconBlur from './images/studyInactive.png';
 import wifiIconBlur from './images/wifiInactive.png';
 
+import './Icon.css';
+
 const icons = {
     printer: {
         inactive: printerIconBlur,
