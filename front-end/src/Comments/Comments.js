@@ -1,4 +1,3 @@
-import "./Comments.css";
 import { useState, useEffect } from "react";
 import CommentForm from "./CommentForm";
 import Comment from "./Comment";
@@ -60,8 +59,8 @@ const Comments = ({ commentsUrl, currentUserId }) => {
 
   return (
     <div className="comments">
-      <div className="comments-title">COMMENTS</div>
-      <div className="comment-form-title">leave comment</div>
+      <h3 className="comments-title">Comments</h3>
+      <div className="comment-form-title">Write comment</div>
       <CommentForm submitLabel="Write" handleSubmit={addComment} />
       <div className="comments-container">
         {rootComments.map((rootComment) => (
