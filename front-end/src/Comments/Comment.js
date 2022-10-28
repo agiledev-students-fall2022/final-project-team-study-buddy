@@ -1,4 +1,6 @@
+import "./Comments.css";
 import CommentForm from "./CommentForm";
+import userIcon from "./user-icon.png";
 
 const Comment = ({
   comment,
@@ -29,13 +31,13 @@ const Comment = ({
   const createdAt = new Date(comment.createdAt).toLocaleDateString();
   return (
     <div key={comment.id} className="comment">
-      {/* <div className="comment-image-container"> */}
-        {/* <img src="./images/userIcon.png" /> */}
-      {/* </div> */}
+      <div className="comment-image-container">
+        <img src={userIcon} alt="User Icon" />
+      </div>
       <div className="comment-right-part">
         <div className="comment-content">
           <div className="comment-author">{comment.username}</div>
-          <div>{createdAt}</div>
+          <div className="comment-date">{createdAt}</div>
         </div>
         {!isEditing && <div className="comment-text">{comment.body}</div>}
         {isEditing && (

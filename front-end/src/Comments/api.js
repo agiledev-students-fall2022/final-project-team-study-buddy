@@ -1,3 +1,5 @@
+import "./Comments.css";
+
 export const getComments = async () => {
     return [
       {
