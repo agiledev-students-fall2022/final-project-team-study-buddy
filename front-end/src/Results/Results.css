@@ -1,28 +1,46 @@
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+  all: revert;
+  width: 100vw !important;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr;
+  grid-gap: 20px; */
+  width: 100vw;
+}
+
+.container div {
+  width: 100vw;
 }
 
 .map {
-    position: relative;
-    padding-bottom: 75%;
-    overflow: hidden;
-    padding-left: 150px;
-    padding-top: 90px;
+  position: relative;
+  padding-bottom: 75%;
+  overflow: hidden;
+  padding-left: 150px;
+  padding-top: 90px;
 }
 
-.map iframe{
-    padding-top: 150px;
-    padding-left: 150px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 65% !important;
-    height: 65% !important;
+.map iframe {
+  padding-top: 150px;
+  padding-left: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65% !important;
+  height: 65% !important;
 }
 
 .details {
-    padding-top: 130px;
-    width: 50%;
+  padding-top: 130px;
+  width: 50%;
+}
+
+.result-name {
+  font-weight: bold;
+}
+
+.result-shower {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

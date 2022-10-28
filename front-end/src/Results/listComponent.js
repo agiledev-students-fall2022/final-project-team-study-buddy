@@ -19,8 +19,6 @@ function ListComponent(props) {
   const [focus, setFocus] = useState(0);
 
   useEffect(() => {
-    console.log(props);
-    console.log("fwerfew");
     setName(props.name);
     setDescription(props.description);
     setAddress(props.address);
@@ -32,8 +30,8 @@ function ListComponent(props) {
   return (
     <div id="Result">
       <div id="result-name">
-        <h1>{name}</h1>
-        <div id="results-toggle-wrapper" onClick={() => setFocus(!focus)}>
+        <b onClick={() => alert("reroute to location detailed page")}>{name}</b>
+        <div id="results-toggle-wrapper">
           {focus == 0 ? (
             <img
               src={plus}
@@ -49,7 +47,10 @@ function ListComponent(props) {
           )}
         </div>
       </div>
-      <div id="results-logos">
+      <div
+        id="results-logos"
+        onClick={() => alert("reroute to location detailed page")}
+      >
         {printer == 0 ? (
           <img src={printerLogoBlur} id="filter-logo"></img>
         ) : (
