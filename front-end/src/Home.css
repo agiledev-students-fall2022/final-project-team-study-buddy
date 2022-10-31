@@ -1,13 +1,25 @@
-body {
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
     font-family: Helvetica, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 3px solid pink;
 }
 
 div#container {
-    vertical-align: middle;
-    max-width: 95%;
+    border: 10px solid green;
+    width: fit-content;
+    block-size: fit-content;    
+    display: flex;
+    flex-direction: column;
+    /*vertical-align: middle;*/
+    /*max-width: 95%;*/
 }
 
 h1.title {
