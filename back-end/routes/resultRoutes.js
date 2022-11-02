@@ -11,7 +11,7 @@ router
   // This works because we're already within the '/tests' route
   // so we're simply appending more routes to the '/tests' endpoint
   .use("/test", () => {
-    message: "message for /routes/test";
+    message: "message for /routes";
   });
 
 module.exports = router;
