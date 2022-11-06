@@ -1,17 +1,35 @@
-var express = require("express"),
-  router = express.Router();
+const express = require('express');
+router = express.Router();
 
-router
-  // Add a binding to handle '/'
-  .get("/", function (req, res) {
-    return res.json({ message: "results root" });
-  })
+const isValidZIP = zip => {
+    const zipInt = Number.parseInt(zip);
+    return !(zip.length !== 5 || zipInt === 0 || Number.isNaN(zipInt));
+}
 
-  // Import my automated routes into the path '/tests/automated'
-  // This works because we're already within the '/tests' route
-  // so we're simply appending more routes to the '/tests' endpoint
-  .use("/test", () => {
-    message: "message for /routes";
-  });
+// Add a binding to handle '/'
+router.get("/", (req, res) => res.status(404).json({ error: "No data requested." }));
+
+// get list of results pertaining to ZIP code
+router.get("/:zip", (req, res) => {
+    // validate zip code
+    if (!isValidZIP(req.params.zip)) {
+        return res.status(404).json({ error: "Invalid ZIP requested." });
+    }
+    const zip = req.params.zip;
+    const {wifi, printer, study} = req.params; // TO-DO: make sure this is correct
+    const results = []; // sprint 3: query database to get stored places of matching criteria
+    return res.json({ results: results }); // to-do: return data in usable format
+});
+
+router.get("/:zip/:placeId", (req, res) => {
+    // validate zip code
+    if (!isValidZIP(req.params.zip)) {
+        return res.status(404).json({ error: "Invalid ZIP requested." });
+    }
+    const zip = req.params.zip;
+    const placeId = req.params.placeId; // no validation needed yet, unless we want this to be a name instead
+    const place = {}; // sprint 3: query database to get the requested place
+    return res.json({ place: place });
+});
 
 module.exports = router;
