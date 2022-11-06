@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Results.css";
+import axios from "axios"
 import Header from "./Header/header";
 import Result from "./listComponent";
+//import app from "../../../back-end/app";
 
 function Results() {
   const [printer, setPrinter] = useState(true);
@@ -14,9 +16,20 @@ function Results() {
     setStudy(true);
   }, []);
 
-  const resultShower = () => {
+  const resultShower = async () => {
     let status = false;
-    return testResults.map((result) => {
+
+
+    // Set up below here an API call to the backend to display data from resultRoutes.js
+
+    // What Kevin Wrote Before=> return testResults.map((result) => {
+ 
+      
+    const pipe = await axios.get('http://localhost:3001/results/12345')
+    console.log(pipe);
+
+
+    return JSON.parse(pipe.data).results.map((result) => {
       status =
         (printer && result.printer) ||
         (wifi && result.wifi) ||
@@ -54,7 +67,7 @@ function Results() {
 }
 
 export default Results;
-
+/*
 const testResults = [
   {
     name: "El Barrista Cafe",
@@ -100,4 +113,5 @@ const testResults = [
     wifi: 1,
     study: 1,
   },
-];
+
+];*/
