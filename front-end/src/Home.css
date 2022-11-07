@@ -9,11 +9,9 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 3px solid pink;
 }
 
 div#container {
-    border: 10px solid green;
     width: fit-content;
     block-size: fit-content;    
     display: flex;
@@ -23,7 +21,7 @@ div#container {
 }
 
 h1.title {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     text-transform: uppercase;
     font-style: italic;
     font-weight: 900;
@@ -54,4 +52,10 @@ input[type="submit"] {
     width: 150px;
     height: 30px;
     cursor: pointer;
+}
+
+.logo{
+    width: 110px;
+    height: auto;
+    margin: auto;
 }

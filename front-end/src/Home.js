@@ -1,5 +1,6 @@
 import Icon from './Icon.js';
 import './Home.css'
+import logo from './Logo.png'
 
 /**
  * A React component that represents the Home page of the app.
@@ -34,6 +35,7 @@ const Home = props => {
     <html>
       <body>
         <div id = "container">
+          <img className = 'logo' src={logo} alt="Logo" />
           <h1 className='title'>Study Buddy</h1>
 
           <form action = '/results'>
