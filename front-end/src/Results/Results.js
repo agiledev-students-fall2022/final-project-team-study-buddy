@@ -23,32 +23,17 @@ function Results() {
     // Set up below here an API call to the backend to display data from resultRoutes.js --NICO
     // What Kevin Wrote Before=> return testResults.map((result) => { --NICO
  
-      
-    const pipe = await axios.get('http://localhost:3001/results/12345')
-  
+    let x = []
+    const pipe = await  axios.get('http://localhost:3001/results/12345')
+    //axios.get('http://localhost:3001/results/12345').then((result)=> {
+    //x = result.data})
     //This alert is just to show that the front end gets the correct data-- NICO
-    var x = JSON.stringify(pipe.data)
-    alert(x.map())
 
+    x = pipe.data
+    console.log(x)
+    return <div>HELLO</div>
     return x.map((result) => {
-      status =
-        (printer && result.printer) ||
-        (wifi && result.wifi) ||
-        (study && result.study);
-      if (status) {
-        return (
-          <Result
-            name={result.name}
-            description={result.description}
-            address={result.address}
-            printer={result.printer}
-            wifi={result.wifi}
-            study={result.study}
-          />
-        );
-      } else {
-        return null;
-      }
+      <div>HIHI</div>
     });
   };
 
@@ -66,6 +51,8 @@ function Results() {
     </div>
   );
 }
+
+//<div id="result-shower">{resultShower()}</div>
 
 export default Results;
 /*
