@@ -6,7 +6,9 @@
 }
 
 .header_wrapper h1 {
-  all: revert;
+  font-family: Inter;
+  font-style: italic;
+  /*all: revert;*/
 }
 
 #header-logo {

@@ -1,23 +1,23 @@
-// Sample URL: http://localhost:3001/resource/getResource?id=2&zipcode=11201
+// Sample URL: http://localhost:3001/resource?id=2&zipcode=11201
 
 var express = require("express"),
-  router = express.Router();
+router = express.Router();
 
-router.get("/getResource", function (req, res) {
+const isValidZIP = zip => {
+  const zipInt = Number.parseInt(zip);
+  return !(zip.length !== 5 || zipInt === 0 || Number.isNaN(zipInt));
+}
+
+router.get("/", (req, res) => {
   let resourceID = req.query.id;
   let zipCode = req.query.zipcode;
 
-  if ([undefined, null, ""].includes(resourceID)) {
-    return res.json({ message: "No ID provided" });
-  }
-
-  if ([undefined, null, ""].includes(zipCode)) {
-    return res.json({ message: "No zip code provided" });
+  if (!isValidZIP(zipCode) || [undefined, null, ""].includes(resourceID)) {
+    return res.json({ message: "Some data is missing. A ZIP code and resource ID must be specified." });
   }
 
   // Get results from database with correct id
   result = tempdb[resourceID];
-
   if (result === undefined) {
     return res.json({ message: "Invalid ID provided" });
   }

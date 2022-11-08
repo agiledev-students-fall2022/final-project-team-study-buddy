@@ -13,7 +13,7 @@ function Header(props) {
     <div className="header_wrapper">
       <img src={logo} id="header-logo"></img>
 
-      <h1> Study Buddy </h1>
+      <h1>STUDY BUDDY</h1>
       <div id="header-logos">
         <img
           src={props.printer ? printerLogo : printerLogoInactive}
