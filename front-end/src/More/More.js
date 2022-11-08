@@ -16,14 +16,14 @@ function More() {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		</head>
 		<img src={logo} className='more-logo'></img>
-		<div className='container'>
+		<div className='more-container'>
 
 			{/* embedded map  */}
-			<div className='map'>
+			<div className='more-map'>
 				<p id='zip-code'> Resources in: 10029 </p>
 				<iframe 
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.3109102922936!2d-73.94168398458802!3d40.79916114021546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f70423376a7b%3A0x30a29fe36645519f!2sEl%20Barrista%20cafe!5e0!3m2!1sen!2sus!4v1666538623209!5m2!1sen!2sus" 
-					width="600" 
+					width="500" 
 					height="450" 
 					style={{ border: "0" }}
 					allowfullscreen="" 
@@ -33,7 +33,7 @@ function More() {
 			</div>
 
 			{/* text next to map */}
-			<div className='details'>
+			<div className='more-details'>
 				<h2 id='title'> El Barrista Cafe <a href='https://www.instagram.com/elbarristanyc/?hl=en'><img src={blackGlobe} className='insta-link'></img></a></h2>
 				<p id='location'> New York, NY 0.5 miles away </p>
 				<p id='blurb'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 

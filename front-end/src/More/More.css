@@ -17,7 +17,7 @@
 }
 
 #title {
-    font-size: 40px;
+    font-size: 38px;
     font-family: Inter;
     font-style: italic;
 }
@@ -27,14 +27,14 @@
 }
 
 /* styling map + details container */
-.container {
+.more-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding-top: 30px;
+    padding-top: 100px;
+    padding-left: 70px;
 }
 
-.map {
+.more-map {
     text-align: left;
     position: relative;
     padding-bottom: 75%;
@@ -49,10 +49,11 @@
     height: 75% !important;
 }
 
-.details {
+.more-details {
     text-align: left;
-    width: 50%;
+    width: 52%;
     overflow: hidden;
+    padding-top: 50px;
 }
 
 #zip-code {
@@ -102,7 +103,7 @@
     height: 6%;
     width: 6%;
     padding-top: 40px;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 
 @media (max-width: 650px) {
