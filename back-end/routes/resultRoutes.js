@@ -12,7 +12,7 @@ const isValidZIP = (zip) => {
 const testResults = [
   {
     name: "El Barrista Cafe",
-    address: "1121 ur mom blvd, New York, NY 10029",
+    address: "1121 5th ave, New York, NY 10029",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore",
     printer: 1,
@@ -21,7 +21,7 @@ const testResults = [
   },
   {
     name: "El Barrista Cafe",
-    address: "1121 ur mom blvd, New York, NY 10029",
+    address: "1121 5th ave, New York, NY 10029",
     description: "Lorem ipsum dolor ",
     printer: 0,
     wifi: 1,
@@ -29,7 +29,7 @@ const testResults = [
   },
   {
     name: "El Barrista Cafe",
-    address: "1121 ur mom blvd, New York, NY 10029",
+    address: "1121 5th ave, New York, NY 10029",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore",
     printer: 1,
@@ -38,7 +38,7 @@ const testResults = [
   },
   {
     name: "El Barrista Cafe",
-    address: "1121 ur mom blvd, New York, NY 10029",
+    address: "1121 5th ave, New York, NY 10029",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore",
     printer: 1,
@@ -47,7 +47,7 @@ const testResults = [
   },
   {
     name: "El Barrista Cafe",
-    address: "1121 ur mom blvd, New York, NY 10029",
+    address: "1121 5th ave, New York, NY 10029",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore",
     printer: 1,
