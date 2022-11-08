@@ -26,10 +26,10 @@ function Results() {
  
       
     const pipe = await axios.get('http://localhost:3001/results/12345')
-    console.log(pipe);
+  
+    alert(JSON.stringify(pipe.data))
 
-
-    return JSON.parse(pipe.data).results.map((result) => {
+    return JSON.stringify(pipe).data.map((result) => {
       status =
         (printer && result.printer) ||
         (wifi && result.wifi) ||

@@ -18,7 +18,8 @@ const testResults = [
       printer: 1,
       wifi: 0,
       study: 1,
-    },
+    }
+    ,
     {
       name: "El Barrista Cafe",
       address: "1121 ur mom blvd, New York, NY 10029",
@@ -53,8 +54,8 @@ const testResults = [
       printer: 1,
       wifi: 1,
       study: 1,
-    },
-  ];
+    }
+];
   
 
 
@@ -70,8 +71,8 @@ router.get("/:zip", (req, res) => {
     }
     const zip = req.params.zip;
     const {wifi, printer, study} = req.params; // TO-DO: make sure this is correct
-    const results = testResults; // sprint 3: query database to get stored places of matching criteria
-    return res.json(results); // to-do: return data in usable format
+    const results = (testResults); // sprint 3: query database to get stored places of matching criteria
+    return res.json((results)); // to-do: return data in usable format
 });
 
 router.get("/:zip/:placeId", (req, res) => {
