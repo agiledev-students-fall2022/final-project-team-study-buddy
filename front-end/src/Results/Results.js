@@ -1,22 +1,52 @@
 import React, { useEffect, useState } from "react";
 import "./Results.css";
+import axios from "axios";
 import Header from "./Header/header";
 import Result from "./listComponent";
+import { useSearchParams } from "react-router-dom";
+//import app from "../../../back-end/app";
 
 function Results() {
   const [printer, setPrinter] = useState(true);
   const [wifi, setWifi] = useState(true);
   const [study, setStudy] = useState(true);
+  const [data, setData] = useState({results: []});
+
+  const params = new URLSearchParams(window.location.search);
 
   useEffect(() => {
+    const fetchResults = async () => {
+      try {
+        console.log('zip: ' + params.get('query'));
+        await axios
+          .get(`http://localhost:3001/results/${params.get('query')}`)
+          .then(res => setData(res.data));
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchResults();
     setPrinter(true);
     setWifi(true);
     setStudy(true);
   }, []);
 
   const resultShower = () => {
+    // return "IN RESULT";
     let status = false;
-    return testResults.map((result) => {
+
+    // Set up below here an API call to the backend to display data from resultRoutes.js --NICO
+    // What Kevin Wrote Before=> return testResults.map((result) => { --NICO
+
+    // const pipe = await axios.get("http://localhost:3001/results/12345");
+    //axios.get('http://localhost:3001/results/12345').then((result)=> {
+    //x = result.data})
+    //This alert is just to show that the front end gets the correct data-- NICO
+
+    // x = pipe.data;
+    console.log('data: ', data.results);
+    // return <div>HELLO</div>;
+    return data.results.map((result, id) => {
       status =
         (printer && result.printer) ||
         (wifi && result.wifi) ||
@@ -24,6 +54,7 @@ function Results() {
       if (status) {
         return (
           <Result
+            key={id + result.name}
             name={result.name}
             description={result.description}
             address={result.address}
@@ -48,13 +79,17 @@ function Results() {
         setWifi={() => setWifi(!wifi)}
         setStudy={() => setStudy(!study)}
       />
-      <div id="result-shower">{resultShower()}</div>
+      <div id="result-shower">
+        {data.results.length === 0 ? <div>Error: No results were found for that ZIP code.</div> : resultShower()}
+      </div>
     </div>
   );
 }
 
-export default Results;
+//<div id="result-shower">{resultShower()}</div>
 
+export default Results;
+/*
 const testResults = [
   {
     name: "El Barrista Cafe",
@@ -100,4 +135,5 @@ const testResults = [
     wifi: 1,
     study: 1,
   },
-];
+
+];*/

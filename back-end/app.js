@@ -6,10 +6,17 @@ const app = express();
 var resultRoutes = require("./routes/resultRoutes");
 var resourceRoutes = require("./routes/resourceRoutes");
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 // route for HTTP GET requests to /json-example
 app.get("/", (req, res) => {
     // send the response as JSON text to the client
-    res.json({ message: "ROOT SERVER" });
+
+    res.json({ message: "message" });
 });
 
 app.use("/results", resultRoutes);
