@@ -30,7 +30,7 @@ function ListComponent(props) {
   return (
     <div id="Result">
       <div id="result-name">
-        <b onClick={() => alert("reroute to location detailed page")}>{name}</b>
+        <b onClick={() => window.location.href = '/more'}>{name}</b>
         <div id="results-toggle-wrapper">
           {focus == 0 ? (
             <img
@@ -49,7 +49,7 @@ function ListComponent(props) {
       </div>
       <div
         id="results-logos"
-        onClick={() => alert("reroute to location detailed page")}
+        onClick={() => window.location.href = '/more'}
       >
         {printer == 0 ? (
           <img src={printerLogoBlur} id="filter-logo"></img>

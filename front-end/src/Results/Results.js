@@ -3,7 +3,6 @@ import "./Results.css";
 import axios from "axios";
 import Header from "./Header/header";
 import Result from "./listComponent";
-import { useSearchParams } from "react-router-dom";
 //import app from "../../../back-end/app";
 
 function Results() {

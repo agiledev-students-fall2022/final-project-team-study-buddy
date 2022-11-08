@@ -10,10 +10,10 @@ const Home = props => {
   return (
     <>
         <div id='container'>
-          <h1 className='title'>Study Buddy</h1>
+          <h1 className='title'>STUDY BUDDY</h1>
           <form action='/results'>
             <p>
-                <input type='text' name='query' placeholder='Enter ZIP Code' />
+                <input type='text' name='query' placeholder='Enter ZIP Code' pattern="[0-9]{5}" required />
             </p>
             <p>
                 <Icon type="printer" in_form='yes' />
