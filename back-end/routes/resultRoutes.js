@@ -6,8 +6,8 @@ const isValidZIP = zip => {
     return !(zip.length !== 5 || zipInt === 0 || Number.isNaN(zipInt));
 }
 
-//Add testResults object to here and just hardcode it... this is stuff to be updated in
-//sprint three
+//Adding testResults object to here and just hardcode it... this is stuff to be updated in
+//sprint three. Check Results.js on the front-end to see this implemented-- NICO
 
 const testResults = [
     {

@@ -20,16 +20,17 @@ function Results() {
     let status = false;
 
 
-    // Set up below here an API call to the backend to display data from resultRoutes.js
-
-    // What Kevin Wrote Before=> return testResults.map((result) => {
+    // Set up below here an API call to the backend to display data from resultRoutes.js --NICO
+    // What Kevin Wrote Before=> return testResults.map((result) => { --NICO
  
       
     const pipe = await axios.get('http://localhost:3001/results/12345')
   
-    alert(JSON.stringify(pipe.data))
+    //This alert is just to show that the front end gets the correct data-- NICO
+    var x = JSON.stringify(pipe.data)
+    alert(x.map())
 
-    return JSON.stringify(pipe).data.map((result) => {
+    return x.map((result) => {
       status =
         (printer && result.printer) ||
         (wifi && result.wifi) ||

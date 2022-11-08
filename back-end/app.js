@@ -15,55 +15,6 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
     // send the response as JSON text to the client
 
-    /*
-  const testResults = [
-      {
-        name: "El Barrista Cafe",
-        address: "1121 ur mom blvd, New York, NY 10029",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore",
-        printer: 1,
-        wifi: 0,
-        study: 1,
-      },
-      {
-        name: "El Barrista Cafe",
-        address: "1121 ur mom blvd, New York, NY 10029",
-        description: "Lorem ipsum dolor ",
-        printer: 0,
-        wifi: 1,
-        study: 0,
-      },
-      {
-        name: "El Barrista Cafe",
-        address: "1121 ur mom blvd, New York, NY 10029",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore",
-        printer: 1,
-        wifi: 1,
-        study: 1,
-      },
-      {
-        name: "El Barrista Cafe",
-        address: "1121 ur mom blvd, New York, NY 10029",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore",
-        printer: 1,
-        wifi: 0,
-        study: 1,
-      },
-      {
-        name: "El Barrista Cafe",
-        address: "1121 ur mom blvd, New York, NY 10029",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore dolore",
-        printer: 1,
-        wifi: 1,
-        study: 1,
-      },
-    ];
-    */
-  
     res.json({ message: "message" });
 });
 
