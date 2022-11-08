@@ -3,25 +3,29 @@ import "./Results.css";
 import axios from "axios";
 import Header from "./Header/header";
 import Result from "./listComponent";
+import { useSearchParams } from "react-router-dom";
 //import app from "../../../back-end/app";
 
 function Results() {
   const [printer, setPrinter] = useState(true);
   const [wifi, setWifi] = useState(true);
   const [study, setStudy] = useState(true);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({results: []});
+
+  const params = new URLSearchParams(window.location.search);
 
   useEffect(() => {
-    async function fetchData() {
-      // You can await here
-      const response = await axios
-        .get("http://localhost:3001/results?zip=11201")
-        .catch((err) => {
-          console.log("Error: ", err);
-        });
-      setData(response.data);
+    const fetchResults = async () => {
+      try {
+        console.log('zip: ' + params.get('query'));
+        await axios
+          .get(`http://localhost:3001/results/${params.get('query')}`)
+          .then(res => setData(res.data));
+      } catch (err) {
+        console.error(err);
+      }
     }
-    fetchData();
+    fetchResults();
     setPrinter(true);
     setWifi(true);
     setStudy(true);
@@ -40,9 +44,9 @@ function Results() {
     //This alert is just to show that the front end gets the correct data-- NICO
 
     // x = pipe.data;
-    console.log(data);
+    console.log('data: ', data.results);
     // return <div>HELLO</div>;
-    return data.map((result, id) => {
+    return data.results.map((result, id) => {
       status =
         (printer && result.printer) ||
         (wifi && result.wifi) ||
@@ -76,7 +80,7 @@ function Results() {
         setStudy={() => setStudy(!study)}
       />
       <div id="result-shower">
-        {data.length == 0 ? <div>I AM NULL</div> : resultShower()}
+        {data.results.length === 0 ? <div>Error: No results were found for that ZIP code.</div> : resultShower()}
       </div>
     </div>
   );
