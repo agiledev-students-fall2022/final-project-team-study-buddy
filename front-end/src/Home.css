@@ -1,17 +1,27 @@
-body {
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
     font-family: Helvetica, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 div#container {
-    vertical-align: middle;
-    max-width: 95%;
+    width: fit-content;
+    block-size: fit-content;    
+    display: flex;
+    flex-direction: column;
+    /*vertical-align: middle;*/
+    /*max-width: 95%;*/
 }
 
 h1.title {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     text-transform: uppercase;
     font-family: Inter;
     font-style: italic;
@@ -43,4 +53,10 @@ input[type="submit"] {
     width: 150px;
     height: 30px;
     cursor: pointer;
+}
+
+.logo{
+    width: 110px;
+    height: auto;
+    margin: auto;
 }
