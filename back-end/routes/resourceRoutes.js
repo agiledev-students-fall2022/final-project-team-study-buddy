@@ -32,7 +32,7 @@ router.get("/:resourceID", (req, res) => {
 });
 
 router.post("/:resourceID/vote", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const id = req.params.resourceID;
   const direction = req.body.direction;
   const type = req.body.type;
