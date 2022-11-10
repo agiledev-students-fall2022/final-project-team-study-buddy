@@ -2,6 +2,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json());
+
 // results routes
 var resultRoutes = require("./routes/resultRoutes");
 var resourceRoutes = require("./routes/resourceRoutes");

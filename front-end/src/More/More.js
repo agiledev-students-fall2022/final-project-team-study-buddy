@@ -61,12 +61,13 @@ function More() {
     fetchResults();
   }, []);
 
-  async function upWifi() {
-    let info = {title: title, thisID: id}
-    console.log(info);
-    let res = await axios.post(`http://localhost:3001/resource/wifiUp`, info);
-    let data = res.data;
-    console.log("result: " + data);
+  async function sendVote(dir, type) {
+    let data = {
+      direction: dir,
+      type: type
+    };
+    let res = await axios.post(`http://localhost:3001/resource/${id}/vote`, data);
+    console.log(res.data);
   }
 
   return (
@@ -137,7 +138,7 @@ function More() {
               <img src={blueGlobe} className="placeholder"></img>
               <div className="thumbs-container">
                 {/* the upvotes and downvotes icons are here */}
-                <button onClick={upWifi}>
+                <button onClick={(() => sendVote('up', 'wifi'))}>
                   <img src={upvote} className="upvotes"></img>
                 </button>
 

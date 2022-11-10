@@ -32,14 +32,14 @@ router.get("/:resourceID", (req, res) => {
 });
 
 router.post("/:resourceID/vote", (req, res) => {
-  // console.log(req.params);
+  console.log(req.body);
   const id = req.params.resourceID;
-  const vote = req.body.vote;
+  const direction = req.body.direction;
   const type = req.body.type;
 
   // data validation
-  if (!['up', 'down'].includes(vote.toLowerCase())) {
-    return res.status(400).json({message: 'Invalid vote.'});
+  if (!['up', 'down'].includes(direction.toLowerCase())) {
+    return res.status(400).json({message: 'Invalid vote direction.'});
   } else if (!['wifi', 'printer', 'study'].includes(type.toLowerCase())) {
     return res.status(400).json({message: 'Invalid vote type.'});
   }
