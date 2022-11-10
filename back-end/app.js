@@ -5,6 +5,7 @@ const app = express();
 // results routes
 var resultRoutes = require("./routes/resultRoutes");
 var resourceRoutes = require("./routes/resourceRoutes");
+var commentRoutes = require("./routes/commentRoutes");
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 
 app.use("/results", resultRoutes);
 app.use("/resource", resourceRoutes);
+app.use("/comments", commentRoutes);
 
 // export the express app we created to make it available to other modules
 module.exports = app;
