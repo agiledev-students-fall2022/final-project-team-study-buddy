@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import studyLogo from "../images/studyLogo.png";
-import printerLogo from "../images/printerLogo.png";
-import wifiLogo from "../images/wifiLogo.png";
-import studyLogoBlur from "../images/studyBlur.png";
-import printerLogoBlur from "../images/printerBlur.png";
-import wifiLogoBlur from "../images/wifiBlur.png";
+import studyLogo from "../images/studyActive.png";
+import printerLogo from "../images/printerActive.png";
+import wifiLogo from "../images/wifiActive.png";
+import studyLogoBlur from "../images/studyInactive.png";
+import printerLogoBlur from "../images/printerInactive.png";
+import wifiLogoBlur from "../images/wifiInactive.png";
 import plus from "../images/plus.png";
 import minus from "../images/minus.png";
 import "./listComponent.css";
@@ -19,8 +19,6 @@ function ListComponent(props) {
   const [focus, setFocus] = useState(0);
 
   useEffect(() => {
-    console.log(props);
-    console.log("fwerfew");
     setName(props.name);
     setDescription(props.description);
     setAddress(props.address);
@@ -32,8 +30,8 @@ function ListComponent(props) {
   return (
     <div id="Result">
       <div id="result-name">
-        <h1>{name}</h1>
-        <div id="results-toggle-wrapper" onClick={() => setFocus(!focus)}>
+        <b onClick={() => window.location.href = '/more'}>{name}</b>
+        <div id="results-toggle-wrapper">
           {focus == 0 ? (
             <img
               src={plus}
@@ -49,7 +47,10 @@ function ListComponent(props) {
           )}
         </div>
       </div>
-      <div id="results-logos">
+      <div
+        id="results-logos"
+        onClick={() => window.location.href = '/more'}
+      >
         {printer == 0 ? (
           <img src={printerLogoBlur} id="filter-logo"></img>
         ) : (

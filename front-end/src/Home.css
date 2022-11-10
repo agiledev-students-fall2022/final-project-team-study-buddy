@@ -1,0 +1,62 @@
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#container {
+    width: fit-content;
+    block-size: fit-content;    
+    display: flex;
+    flex-direction: column;
+    /*vertical-align: middle;*/
+    /*max-width: 95%;*/
+}
+
+h1.title {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+input[type="text"] {
+    margin: auto 10px;
+    height: 30px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input[type="text"]::placeholder {
+    font-style: italic;
+}
+
+input[type="submit"] {
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: lowercase;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.logo{
+    width: 110px;
+    height: auto;
+    margin: auto;
+}

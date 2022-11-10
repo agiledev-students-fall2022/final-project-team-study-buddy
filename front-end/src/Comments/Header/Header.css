@@ -2,13 +2,6 @@
   display: block;
   padding-top: 5%;
   padding-bottom: 5%;
-  width: 100vw;
-}
-
-.header_wrapper h1 {
-  font-family: Inter;
-  font-style: italic;
-  /*all: revert;*/
 }
 
 #header-logo {
@@ -30,5 +23,4 @@
   margin: 0 5px;
   width: 3%;
   height: 3%;
-  cursor: pointer;
 }

@@ -1,23 +1,35 @@
 import React from "react";
 import "./Header.css";
-import studyLogo from "../../images/studyLogo.png";
 import logo from "../../images/logo.png";
-import printerLogo from "../../images/printerLogo.png";
-import wifiLogo from "../../images/wifiLogo.png";
+import studyLogo from "../../images/studyActive.png";
+import printerLogo from "../../images/printerActive.png";
+import wifiLogo from "../../images/wifiActive.png";
+import studyLogoInactive from "../../images/studyInactive.png";
+import printerLogoInactive from "../../images/printerInactive.png";
+import wifiLogoInactive from "../../images/wifiInactive.png";
 
-function Header() {
+function Header(props) {
   return (
-    <div>
-      <div className="header_wrapper">
-        <img src={logo} id="header-logo"></img>
+    <div className="header_wrapper">
+      <img src={logo} id="header-logo"></img>
 
-        {/* test next to map */}
-        <h1> Study Buddy </h1>
-        <div id="header-logos">
-          <img src={printerLogo} id="filter-logo"></img>
-          <img src={wifiLogo} id="filter-logo"></img>
-          <img src={studyLogo} id="filter-logo"></img>
-        </div>
+      <h1>STUDY BUDDY</h1>
+      <div id="header-logos">
+        <img
+          src={props.printer ? printerLogo : printerLogoInactive}
+          onClick={() => props.setPrinter()}
+          id="filter-logo"
+        ></img>
+        <img
+          src={props.wifi ? wifiLogo : wifiLogoInactive}
+          id="filter-logo"
+          onClick={() => props.setWifi()}
+        ></img>
+        <img
+          src={props.study ? studyLogo : studyLogoInactive}
+          id="filter-logo"
+          onClick={() => props.setStudy()}
+        ></img>
       </div>
     </div>
   );
