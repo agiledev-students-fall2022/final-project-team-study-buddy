@@ -31,10 +31,23 @@ router.get("/:resourceID", (req, res) => {
   return res.json(result);
 });
 
-router.post("/wifiUp", (req, res) => {
+router.post("/:resourceID/vote", (req, res) => {
   // console.log(req.params);
-  const id = req.body.thisId;
-  return res.send(id);
+  const id = req.params.resourceID;
+  const vote = req.body.vote;
+  const type = req.body.type;
+
+  // data validation
+  if (!['up', 'down'].includes(vote.toLowerCase())) {
+    return res.status(400).json({message: 'Invalid vote.'});
+  } else if (!['wifi', 'printer', 'study'].includes(type.toLowerCase())) {
+    return res.status(400).json({message: 'Invalid vote type.'});
+  }
+
+  // INFLUENCE RATING HERE
+  // ADD DATA VALIDATION FOR IF RESOURCE NOT FOUND
+
+  return res.json({success: true});
 });
 
 module.exports = router;
