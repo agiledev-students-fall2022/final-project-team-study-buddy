@@ -3,64 +3,24 @@
 var express = require("express"),
 router = express.Router();
 
-const isValidZIP = zip => {
-  const zipInt = Number.parseInt(zip);
-  return !(zip.length !== 5 || zipInt === 0 || Number.isNaN(zipInt));
-}
+const testData = require('../tests/testData.json');
 
-router.get("/", (req, res) => {
-  let resourceID = req.query.id;
-  let zipCode = req.query.zipcode;
-
-  if (!isValidZIP(zipCode) || [undefined, null, ""].includes(resourceID)) {
-    return res.json({ message: "Some data is missing. A ZIP code and resource ID must be specified." });
+router.get("/:resourceID", (req, res) => {
+  let rInt = Number.parseInt(req.params.resourceID);
+  if ([undefined, null, ""].includes(req.params.resourceID) || rInt === 0 || Number.isNaN(rInt)) {
+    return res.status(400).json({ message: "A resource ID must be specified." });
   }
 
   // Get results from database with correct id
-  result = tempdb[resourceID];
+  result = testData[rInt - 1];
   if (result === undefined) {
-    return res.json({ message: "Invalid ID provided" });
+    return res.status(404).json({ message: "Could not find a resource with that ID." });
   }
 
   // Add map url
-  result.mapUrl = `https://www.google.com/maps/dir/${zipCode}/${result.address}`;
+  result.mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=${result.address}`;
 
   return res.json(result);
 });
 
 module.exports = router;
-
-let tempdb = {
-  1: {
-    id: 1,
-    name: "Astoria Library",
-    address: "14-01 Astoria Boulevard  Astoria, NY 11102",
-    printer: 1,
-    wifi: 0,
-    study: 1,
-    description:
-      "Incididunt et cupidatat consectetur sunt ex irure aliqua. Eiusmod ea anim ea minim ut et sint dolor enim laboris tempor sit laborum exercitation. Magna et proident irure Lorem occaecat laborum voluptate ullamco aliquip.",
-    rating: 4.5,
-    comments: [
-      "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-      "Sint magna nisi et aliquip ex id sunt enim.",
-      "Tempor laboris esse sunt elit id ad sunt pariatur.",
-    ],
-  },
-  2: {
-    id: 2,
-    name: "Astoria Library",
-    address: "14-01 Astoria Boulevard  Astoria, NY 11102",
-    printer: 1,
-    wifi: 0,
-    study: 1,
-    description:
-      "Incididunt et cupidatat consectetur sunt ex irure aliqua. Eiusmod ea anim ea minim ut et sint dolor enim laboris tempor sit laborum exercitation. Magna et proident irure Lorem occaecat laborum voluptate ullamco aliquip.",
-    rating: 4.5,
-    comments: [
-      "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-      "Sint magna nisi et aliquip ex id sunt enim.",
-      "Tempor laboris esse sunt elit id ad sunt pariatur.",
-    ],
-  },
-};
