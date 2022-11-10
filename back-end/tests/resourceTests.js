@@ -13,16 +13,16 @@ const should = chai.should(); // the same assertion library in the style using t
 const server = require("../app");
 
 // a group of tests related to the /resources/getResources route
-describe("/getResource", () => {
+describe("/resource", () => {
   /**
    * test the GET / route
    */
-  describe("GET /getResource request", () => {
+  describe("GET /resource request", () => {
     // test a protected route when not logged in... passport auth should send back a 401 HTTP error
     it("A good request + response should have a status code of 200", done => {
         chai
           .request(server)
-          .get("/getResource?id=2&zipcode=11201")
+          .get("/resource/2")
           .end((err, res) => {
               expect(res.status, 200);
             // res.json.should.be.a("object") // our route sends back an object
@@ -37,11 +37,21 @@ describe("/getResource", () => {
     it("A bad request should have a response status code of 400 ", done => {
         chai
           .request(server)
-          .get("/getResource?zipcode=11201")
+          .get("/resource")
           .end((err, res) => {
               expect(res.status, 400);
             done(); // resolve the Promise that these tests create so mocha can move on
         });
     });
+
+    it("A request for non-existent should have a response status code of 404 ", done => {
+      chai
+        .request(server)
+        .get("/resource/1209")
+        .end((err, res) => {
+            expect(res.status, 404);
+          done(); // resolve the Promise that these tests create so mocha can move on
+      });
+  });
   });
 });
