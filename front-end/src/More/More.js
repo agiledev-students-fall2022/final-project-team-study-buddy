@@ -63,6 +63,14 @@ function More() {
 		fetchResults();
 	}, []);
 
+	async function upWifi() {
+		console.log(id);
+		let res = await axios
+			.post(`http://localhost:3001/resource/wifiUp`, id);
+			let data = res.data;
+			console.log("result: " + data);
+	}
+
 	return (
 		<div>
 			<img src={logo} className='more-logo'></img>
@@ -118,7 +126,10 @@ function More() {
 								<img src={blueGlobe} className='placeholder'></img>
 								<div className='thumbs-container'>
 									{/* the upvotes and downvotes icons are here */}
-									<img src={upvote} className='upvotes'></img>
+									<button onClick={upWifi}>
+										<img src={upvote} className='upvotes'></img>
+									</button>
+			
 									<img src={upvote} className='downvotes'></img>
 								</div>
 								{/* the actual numbers are here  */}
