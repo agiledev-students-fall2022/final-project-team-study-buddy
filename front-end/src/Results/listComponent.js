@@ -17,6 +17,7 @@ function ListComponent(props) {
   const [wifi, setWifi] = useState(0);
   const [study, setStudy] = useState(0);
   const [focus, setFocus] = useState(0);
+  const rid = props.resourceID;
 
   useEffect(() => {
     setName(props.name);
@@ -30,7 +31,7 @@ function ListComponent(props) {
   return (
     <div id="Result">
       <div id="result-name">
-        <b onClick={() => window.location.href = '/more'}>{name}</b>
+        <b onClick={() => window.location.href = `/more?resource_id=${rid}`}>{name}</b>
         <div id="results-toggle-wrapper">
           {focus == 0 ? (
             <img
@@ -71,6 +72,10 @@ function ListComponent(props) {
         <div>
           <p>{address}</p>
           <p>{description}</p>
+          <details>
+            <summary id = "button">Learn More</summary>
+            <p><button id = "button">Google Maps</button><button id = "button">Reviews</button><button id = "button">Comment</button></p>
+          </details>
         </div>
       )}
       {/* <p>{address}</p>

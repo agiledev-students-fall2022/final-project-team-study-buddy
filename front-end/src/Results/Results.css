@@ -12,11 +12,11 @@
 }
 
 .map {
-  position: relative;
-  padding-bottom: 75%;
-  overflow: hidden;
-  padding-left: 150px;
-  padding-top: 90px;
+    position: relative;
+    padding-bottom: 75%;
+    overflow: hidden;
+    padding-left: 1em;
+    padding-top: 1em;
 }
 
 .map iframe {
