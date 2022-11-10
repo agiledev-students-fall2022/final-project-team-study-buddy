@@ -23,4 +23,9 @@ router.get("/:resourceID", (req, res) => {
   return res.json(result);
 });
 
+router.post("/:resourcewifiUp", (req, res) => {
+  const id = req.body.thisId;
+  return res.send(id);
+});
+
 module.exports = router;
