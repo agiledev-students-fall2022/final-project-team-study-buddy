@@ -62,10 +62,9 @@ function More() {
   }, []);
 
   async function upWifi() {
-    console.log(id);
-    let res = await axios.post(`http://localhost:3001/resource/wifiUp`, null, {
-      params: { thisID: id },
-    });
+    let info = {title: title, thisID: id}
+    console.log(info);
+    let res = await axios.post(`http://localhost:3001/resource/wifiUp`, info);
     let data = res.data;
     console.log("result: " + data);
   }
