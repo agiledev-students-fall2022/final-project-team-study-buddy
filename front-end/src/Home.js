@@ -1,6 +1,6 @@
 import Icon from './Icon.js';
-import './Home.css'
-import logo from './Logo.png'
+import './Home.css';
+import logo from './Logo.png';
 
 /**
  * A React component that represents the Home page of the app.
@@ -32,9 +32,7 @@ const Home = props => {
         </div>
         </body>
     </html>*/
-    <html>
-      <body>
-        <div id = "container">
+        <div id = "home-container">
           <img className = 'logo' src={logo} alt="Logo" />
           <h1 className='title'>Study Buddy</h1>
 
@@ -53,8 +51,6 @@ const Home = props => {
             <Icon type="wifi" in_form='yes' />
           </div>
         </div>
-        </body>
-    </html>
   )
 }
 
