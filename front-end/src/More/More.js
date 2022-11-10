@@ -64,12 +64,9 @@ function More() {
 	}, []);
 
 	return (
-		<html>
-		<head> 
-			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		</head>
-		<img src={logo} className='more-logo'></img>
-		<div className='more-container'>
+		<div>
+			<img src={logo} className='more-logo'></img>
+			<div className='more-container'>
 
             <div className="error-text" style={{display: error !== '' ? 'block' : 'none'}}>
                 Error: {error}
@@ -165,7 +162,8 @@ function More() {
 					</div>
 				</div>
 			</div>
-			</html>
+		</div>
+		
 	);
 }
 
