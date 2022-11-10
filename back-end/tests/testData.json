@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "name": "Elmer Holmes Bobst Library",
+        "address": "70 Washington Square S, New York, NY 10012",
+        "zip": 10012,
+        "website": "https://library.nyu.edu/locations/elmer-holmes-bobst-library/",
+        "description": "The Elmer Holmes Bobst Library, often referred to as simply Bobst Library or Bobst, is the main library at New York University in Manhattan, New York City.",
+        "printer": 1,
+        "wifi": 1,
+        "study": 1,
+        "rating": 4.5,
+        "comments": [
+            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
+            "Sint magna nisi et aliquip ex id sunt enim.",
+            "Tempor laboris esse sunt elit id ad sunt pariatur."
+        ]
+    },
+    {
+        "id": 2,
+        "name": "El Barrista Cafe",
+        "address": "2154 3rd Ave, New York, NY 10035",
+        "zip": 10035,
+        "website": "https://www.instagram.com/elbarristanyc",
+        "description": "A cafe in East Harlem offering free Wi-Fi.",
+        "printer": 0,
+        "wifi": 1,
+        "study": 0,
+        "rating": 4.5,
+        "comments": [
+            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
+            "Sint magna nisi et aliquip ex id sunt enim.",
+            "Tempor laboris esse sunt elit id ad sunt pariatur."
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Kimmel Center for University Life",
+        "address": "60 Washington Square S, New York, NY 10012",
+        "zip": 10012,
+        "website": "https://www.nyu.edu/life/campus-resources/kimmel-center.html",
+        "description": "Located at the heart of the NYU campus, the Kimmel Center provides space and resources for students, faculty, staff, departments, alumni, and community organizations. Visitors have access to NYU Dining, Peet’s Coffee, the adjacent Global Center for Academic & Spiritual Life, and a breathtaking view of Washington Square Park.",
+        "printer": 1,
+        "wifi": 1,
+        "study": 1,
+        "rating": 4.5,
+        "comments": [
+            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
+            "Sint magna nisi et aliquip ex id sunt enim.",
+            "Tempor laboris esse sunt elit id ad sunt pariatur."
+        ]
+    },
+    {
+        "id": 4,
+        "name": "My Quiet Cafe",
+        "address": "2152 3rd Ave, New York, NY 10035",
+        "zip": 10035,
+        "website": "https://example.com/",
+        "description": "Lorem ipsum yada yada... this place has Wi-Fi and a quiet study space.",
+        "printer": 0,
+        "wifi": 1,
+        "study": 1,
+        "rating": 4.5,
+        "comments": [
+            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
+            "Sint magna nisi et aliquip ex id sunt enim.",
+            "Tempor laboris esse sunt elit id ad sunt pariatur."
+        ]
+    }
+]
