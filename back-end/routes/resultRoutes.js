@@ -9,13 +9,13 @@ const isValidZIP = zip => {
 }
 
 // Add a binding to handle '/'
-router.get("/", (req, res) => res.status(404).json({ error: "No data requested." }));
+router.get("/", (req, res) => res.status(400).json({ error: "No data requested." }));
 
 // get list of results pertaining to ZIP code
 router.get("/:zip", (req, res) => {
     // validate zip code
     if (!isValidZIP(req.params.zip)) {
-        return res.status(404).json({ error: "Invalid ZIP requested." });
+        return res.status(400).json({ error: "Invalid ZIP requested." });
     }
     const zip = parseInt(req.params.zip);
     const {wifi, printer, study} = req.params; // TO-DO: make sure this is correct
@@ -26,7 +26,11 @@ router.get("/:zip", (req, res) => {
         }
     });
 
-    return res.json({ results: results }); // to-do: return data in usable format
+    if (results.length > 0) {
+        return res.json({ results: results }); // return data in usable format
+    } else {
+        return res.status(404).json({ results: results });
+    }
 });
 
 // overlapping with resourceRoutes
