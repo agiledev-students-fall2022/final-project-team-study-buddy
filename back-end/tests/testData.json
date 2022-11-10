@@ -11,9 +11,38 @@
         "study": 1,
         "rating": 4.5,
         "comments": [
-            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-            "Sint magna nisi et aliquip ex id sunt enim.",
-            "Tempor laboris esse sunt elit id ad sunt pariatur."
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
         ]
     },
     {
@@ -28,9 +57,38 @@
         "study": 0,
         "rating": 4.5,
         "comments": [
-            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-            "Sint magna nisi et aliquip ex id sunt enim.",
-            "Tempor laboris esse sunt elit id ad sunt pariatur."
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
         ]
     },
     {
@@ -45,9 +103,38 @@
         "study": 1,
         "rating": 4.5,
         "comments": [
-            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-            "Sint magna nisi et aliquip ex id sunt enim.",
-            "Tempor laboris esse sunt elit id ad sunt pariatur."
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
         ]
     },
     {
@@ -62,9 +149,38 @@
         "study": 1,
         "rating": 4.5,
         "comments": [
-            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-            "Sint magna nisi et aliquip ex id sunt enim.",
-            "Tempor laboris esse sunt elit id ad sunt pariatur."
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
         ]
     }
 ]
