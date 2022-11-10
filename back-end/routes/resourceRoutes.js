@@ -5,6 +5,9 @@ router = express.Router();
 
 const testData = require('../tests/testData.json');
 
+// Add a binding to handle '/'
+router.get("/", (req, res) => res.status(400).json({ error: "No data requested." }));
+
 router.get("/:resourceID", (req, res) => {
   let rInt = Number.parseInt(req.params.resourceID);
   if ([undefined, null, ""].includes(req.params.resourceID) || rInt === 0 || Number.isNaN(rInt)) {
