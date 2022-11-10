@@ -21,19 +21,21 @@ function More() {
 	const [accessibilityDownVotes, setAccessibilityDownVotes] = useState(0);
 	const [title, setTitle] = useState('');
 	const [address, setAddress] = useState('');
+    const [website, setWebsite] = useState('');
 	const [description, setDescription] = useState('');
 	const [mapURL, setMapURL] = useState('');
-	const zipCode = 11201;
-	const id = 1
+    const [zip, setZIP] = useState('');
 
-	const params = new URLSearchParams(window.location.search);
+    const [error, setError] = useState('');
+
+    const params = new URLSearchParams(window.location.search);
+	const id = params.get('resource_id');
 
 	useEffect(() => {
 		const fetchResults = async () => {
 		try {
-			console.log('zip: ' + params.get('query'));
 			await axios
-			.get(`http://localhost:3001/resource?id=${id}&zipcode=${zipCode}`)
+			.get(`http://localhost:3001/resource/${id}`)
 			.then(res => {
 				console.log(res.data);
 				setPrinterUpVotes(1);
@@ -46,14 +48,16 @@ function More() {
 				setAccessibilityDownVotes(1);
 				setTitle(res.data.name);
 				setAddress(res.data.address);
+                setZIP(res.data.zip);
 				setDescription(res.data.description);
 
-				// replacing spaces with percents
-				setMapURL(res.data.mapUrl.replaceAll(' ', '%'));
-				console.log(res.data.mapUrl.replaceAll(' ', '%'))
+				// replacing spaces with %20
+                setWebsite(res.data.website.replaceAll(' ', '%20'));
+				setMapURL(res.data.mapUrl.replaceAll(' ', '%20'));
 			});
 		} catch (err) {
 			console.error(err);
+            setError(err.response.data.message);
 		}
 		}
 		fetchResults();
@@ -67,9 +71,13 @@ function More() {
 		<img src={logo} className='more-logo'></img>
 		<div className='more-container'>
 
+            <div className="error-text" style={{display: error !== '' ? 'block' : 'none'}}>
+                Error: {error}
+            </div>
+
 			{/* embedded map  */}
-			<div className='more-map'>
-				<p id='zip-code'> Resources in: {zipCode} </p>
+			<div className='more-map' style={{display: error !== '' ? 'none' : 'block'}}>
+				<p id='zip-code'> Resource in: {zip} </p>
 				<iframe 
 					src={mapURL}
 					width="500" 
@@ -82,8 +90,8 @@ function More() {
 			</div>
 
 			{/* text next to map */}
-			<div className='more-details'>
-				<h2 id='title'> {title} <a href='https://www.instagram.com/elbarristanyc/?hl=en'><img src={blackGlobe} className='insta-link'></img></a></h2>
+			<div className='more-details' style={{display: error !== '' ? 'none' : 'block'}}>
+				<h2 id='title'> {title} <a href={website}><img src={blackGlobe} className='website-link'></img></a></h2>
 				<p id='location'> {address} </p>
 				<p id='blurb'> {description} </p>
 

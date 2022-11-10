@@ -82,7 +82,15 @@
     width: 50%;
 }
 
-.insta-link{
+.error-text {
+    text-align: center;
+    color: red;
+    size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.website-link{
     height: 4%;
     width: 4%;
 }
