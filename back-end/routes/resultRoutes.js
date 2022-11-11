@@ -1,7 +1,7 @@
 const express = require('express');
 router = express.Router();
 
-const testData = require('../tests/testData.json');
+const testData = require('../test/testData.json');
 
 const isValidZIP = zip => {
     const zipInt = Number.parseInt(zip);

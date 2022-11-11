@@ -3,7 +3,7 @@
 var express = require("express"),
 router = express.Router();
 
-const testData = require('../tests/testData.json');
+const testData = require('../test/testData.json');
 
 // Add a binding to handle '/'
 router.get("/", (req, res) => res.status(400).json({ error: "No data requested." }));
