@@ -47,6 +47,39 @@ describe("/comments", () => {
             expect(res.status, 404);
           done(); // resolve the Promise that these tests create so mocha can move on
       });
+    });
   });
+
+  describe("POST /comments request", () => {
+    // test a protected route when not logged in... passport auth should send back a 401 HTTP error
+    it("A good request + response should have a status code of 200", done => {
+      chai
+        .request(server)
+        .get("/comments/add")
+        .end((err, res) => {
+            expect(res.status, 200);  
+          done(); // resolve the Promise that these tests create so mocha can move on
+      });
+    });
+
+    it("A bad request should have a response status code of 400 ", done => {
+        chai
+          .request(server)
+          .get("/comments")
+          .end((err, res) => {
+              expect(res.status, 400);
+            done(); // resolve the Promise that these tests create so mocha can move on
+        });
+    });
+
+    it("A request for non-existent data should have a response status code of 404 ", done => {
+      chai
+        .request(server)
+        .get("/comments/99999")
+        .end((err, res) => {
+            expect(res.status, 404);
+          done(); // resolve the Promise that these tests create so mocha can move on
+      });
+    });
   });
 });

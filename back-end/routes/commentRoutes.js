@@ -1,6 +1,8 @@
 const express = require('express');
 const { escapeHtml } = require('markdown-it/lib/common/utils');
-router = express.Router();
+let router = express.Router();
+router.use(express.json());
+//const { router } = require('../app');
 
 const testData = require('../test/testData.json');
 
@@ -22,13 +24,12 @@ router.get('/:resourceID', (req, res) => {
 });
 
 router.post("/add", (req, res) => {
+    const lid = Number.parseInt(req.body.locationID);
     if ([undefined, null, ""].includes(req.body.locationID) || lid === 0 || Number.isNaN(lid)) {
         return res.status(400).json({message: 'Invalid resource ID.'});
-    } else if ([undefined, null, ''].req.body.comment) {
+    } else if ([undefined, null, ''].includes(req.body.comment)) {
         return res.status(400).json({message: 'Invalid comment.'});
     }
-
-    const lid = Number.parseInt(req.body.locationID);
 
     if (lid > testData.length) {
         return res.status(404).json({message: 'No resource was found with that ID.'});
