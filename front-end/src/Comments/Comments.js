@@ -11,19 +11,21 @@ import {
 
 const Comments = ({ commentsUrl, currentUserId }) => {
   const params = new URLSearchParams(window.location.search);
-  const resourceID = params.get('resource_id');
-
+  const resId = params.get('resource_id');
+  
+  const [resourceID, setResourceID] = useState(resId)
   const [backendComments, setBackendComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
-  const jsxComments = [];
-  let rootComments = [];
+  const rootComments = backendComments.filter(
+    (backendComment) => backendComment.parentId === null
+  );
 
-  const getReplies = commentId => {
+  const getReplies = (commentId) => 
     backendComments
-      .filter(backendComment => backendComment.parentId === commentId)
+      .filter((backendComment) => backendComment.parentId === commentId)
       .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
-  }
   
+
   const addComment = (text, parentId) => {
     createCommentApi(resourceID, text, parentId).then((comment) => {
       setBackendComments([comment, ...backendComments]);
@@ -32,8 +34,8 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   };
 
   const updateComment = (text, commentId) => {
-    updateCommentApi(text).then(() => {
-      const updatedBackendComments = backendComments.map(backendComment => {
+    updateCommentApi(resourceID, text, commentId).then(() => {
+      const updatedBackendComments = backendComments.map((backendComment) => {
         return backendComment.id === commentId ? { ...backendComment, body: text } : backendComment;
       });
       setBackendComments(updatedBackendComments);
@@ -43,7 +45,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
 
   const deleteComment = (commentId) => {
     if (window.confirm("Are you sure you want to remove comment?")) {
-      deleteCommentApi().then(() => {
+      deleteCommentApi(resourceID, commentId).then(() => {
         const updatedBackendComments = backendComments.filter(backendComment => backendComment.id !== commentId);
         setBackendComments(updatedBackendComments);
       });
@@ -53,26 +55,9 @@ const Comments = ({ commentsUrl, currentUserId }) => {
   useEffect(() => {
     getCommentsApi(resourceID).then((data) => {
       setBackendComments(data.comments);
-      rootComments = backendComments.filter(backendComment => backendComment.parentId === null);
-      rootComments.forEach(comment => {
-        // console.log('GOT HERE');
-        jsxComments.push(
-          <Comment
-            key={comment.id}
-            comment={comment}
-            replies={getReplies(comment.id)}
-            activeComment={activeComment}
-            setActiveComment={setActiveComment}
-            addComment={addComment}
-            deleteComment={deleteComment}
-            updateComment={updateComment}
-            currentUserId={currentUserId}
-          />
-        );
-      });
-      // console.log(jsxComments);
+      console.log(data.comments);
     });
-  }, []);
+  }, [resourceID]);
 
   return (
     <div className="comments">
@@ -80,7 +65,19 @@ const Comments = ({ commentsUrl, currentUserId }) => {
       <div className="comment-form-title">leave comment</div>
       <CommentForm submitLabel="Write" handleSubmit={addComment} />
       <div className="comments-container">
-        {jsxComments}
+        {rootComments.map((rootComment) => (
+          <Comment
+            key={rootComment.id}
+            comment={rootComment}
+            replies={getReplies(rootComment.id)}
+            activeComment={activeComment}
+            setActiveComment={setActiveComment}
+            addComment={addComment}
+            deleteComment={deleteComment}
+            updateComment={updateComment}
+            currentUserId={currentUserId}
+          />
+        ))}
       </div>
     </div>
   );
