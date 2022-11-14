@@ -6,14 +6,48 @@
         "zip": 10012,
         "website": "https://library.nyu.edu/locations/elmer-holmes-bobst-library/",
         "description": "The Elmer Holmes Bobst Library, often referred to as simply Bobst Library or Bobst, is the main library at New York University in Manhattan, New York City.",
-        "printer": 1,
-        "wifi": 1,
-        "study": 1,
+        "printer": 0,
+        "printerDown": 0,
+        "wifi": 0,
+        "wifiDown": 0,
+        "study": 0,
+        "studyDown": 0,
+        "accessible": 0,
+        "accessibleDown": 0,
         "rating": 4.5,
         "comments": [
-            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-            "Sint magna nisi et aliquip ex id sunt enim.",
-            "Tempor laboris esse sunt elit id ad sunt pariatur."
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
         ]
     },
     {
@@ -24,13 +58,46 @@
         "website": "https://www.instagram.com/elbarristanyc",
         "description": "A cafe in East Harlem offering free Wi-Fi.",
         "printer": 0,
-        "wifi": 1,
+        "printerDown": 0,
+        "wifi": 0,
+        "wifiDown": 0,
         "study": 0,
-        "rating": 4.5,
+        "studyDown": 0,
+        "accessible": 0,
+        "accessibleDown": 0,
         "comments": [
-            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-            "Sint magna nisi et aliquip ex id sunt enim.",
-            "Tempor laboris esse sunt elit id ad sunt pariatur."
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
         ]
     },
     {
@@ -40,14 +107,48 @@
         "zip": 10012,
         "website": "https://www.nyu.edu/life/campus-resources/kimmel-center.html",
         "description": "Located at the heart of the NYU campus, the Kimmel Center provides space and resources for students, faculty, staff, departments, alumni, and community organizations. Visitors have access to NYU Dining, Peet’s Coffee, the adjacent Global Center for Academic & Spiritual Life, and a breathtaking view of Washington Square Park.",
-        "printer": 1,
-        "wifi": 1,
-        "study": 1,
+        "printer": 0,
+        "printerDown": 0,
+        "wifi": 0,
+        "wifiDown": 0,
+        "study": 0,
+        "studyDown": 0,
+        "accessible": 0,
+        "accessibleDown": 0,
         "rating": 4.5,
         "comments": [
-            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-            "Sint magna nisi et aliquip ex id sunt enim.",
-            "Tempor laboris esse sunt elit id ad sunt pariatur."
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
         ]
     },
     {
@@ -58,13 +159,47 @@
         "website": "https://example.com/",
         "description": "Lorem ipsum yada yada... this place has Wi-Fi and a quiet study space.",
         "printer": 0,
-        "wifi": 1,
-        "study": 1,
+        "printerDown": 0,
+        "wifi": 0,
+        "wifiDown": 0,
+        "study": 0,
+        "studyDown": 0,
+        "accessible": 0,
+        "accessibleDown": 0,
         "rating": 4.5,
         "comments": [
-            "PDeserunt sint dolore laborum ipsum amet irure ut fugiat officia adipisicing Lorem anim labore ut.",
-            "Sint magna nisi et aliquip ex id sunt enim.",
-            "Tempor laboris esse sunt elit id ad sunt pariatur."
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
         ]
     }
 ]

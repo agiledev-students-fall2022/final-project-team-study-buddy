@@ -4,6 +4,8 @@ var express = require("express"),
   router = express.Router();
 
 const testData = require("../tests/testData.json");
+const fs = require('fs')
+
 
 router.get("/:resourceID", (req, res) => {
   let rInt = Number.parseInt(req.params.resourceID);
@@ -40,14 +42,43 @@ router.post("/:resourceID/vote", (req, res) => {
   // data validation
   if (!['up', 'down'].includes(direction.toLowerCase())) {
     return res.status(400).json({message: 'Invalid vote direction.'});
-  } else if (!['wifi', 'printer', 'study'].includes(type.toLowerCase())) {
+  } else if (!['wifi', 'printer', 'study', 'accessible'].includes(type.toLowerCase())) {
     return res.status(400).json({message: 'Invalid vote type.'});
   }
 
-  // INFLUENCE RATING HERE
-  // ADD DATA VALIDATION FOR IF RESOURCE NOT FOUND
+  switch(type) {
+    case "printer":
+      if(direction == 'down'){
+        testData[id-1].printerDown += 1;
+      } else {
+        testData[id-1].printer += 1;
+      }
+    case "wifi":
+      if(direction == 'down'){
+        testData[id-1].wifiDown += 1;
+      } else {
+        testData[id-1].wifi += 1;
+      }
+    case "study":
+      if(direction == 'down'){
+        testData[id-1].studyDown += 1;
+      } else {
+        testData[id-1].study += 1;
+      }
+    case "accessible":
+      if(direction == 'down'){
+        testData[id-1].accessibleDown += 1;
+      } else {
+        testData[id-1].accessibleDown += 1;
+      }
 
-  return res.json({success: true});
+      testData[id-1].accessible += 50;
+  }
+
+  console.log(testData);
+
+  return res.json(testData[id-1]);
 });
 
 module.exports = router;
+ 
