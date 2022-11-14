@@ -114,6 +114,11 @@
     padding-left: 60px;
 }
 
+.icon-container button {
+    border: none;
+    background: none;
+}
+
 @media (max-width: 650px) {
     .container {
         grid-template-columns: 1fr;

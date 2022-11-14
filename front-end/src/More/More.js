@@ -36,19 +36,10 @@ function More() {
       try {
         await axios.get(`http://localhost:3001/resource/${id}`).then((res) => {
           console.log(res.data);
-          setPrinterUpVotes(1);
-          setPrinterDownVotes(1);
-          setWifiUpVotes(1);
-          setWifiDownVotes(1);
-          setQuietUpVotes(1);
-          setQuietDownVotes(1);
-          setAccessibilityUpVotes(1);
-          setAccessibilityDownVotes(1);
           setTitle(res.data.name);
           setAddress(res.data.address);
           setZIP(res.data.zip);
           setDescription(res.data.description);
-
           // replacing spaces with %20
           setWebsite(res.data.website.replaceAll(" ", "%20"));
           setMapURL(res.data.mapUrl.replaceAll(" ", "%20"));
@@ -62,12 +53,41 @@ function More() {
   }, []);
 
   async function sendVote(dir, type) {
+
     let data = {
       direction: dir,
       type: type
     };
     let res = await axios.post(`http://localhost:3001/resource/${id}/vote`, data);
     console.log(res.data);
+    
+    console.log("-----  " + type + "  --------");
+
+    if(type == 'printer'){
+        if(dir == 'down'){
+          setPrinterDownVotes(printerDownVotes + 1);
+        } else {
+          setPrinterUpVotes(printerUpVotes + 1);
+        }
+    } else if(type == 'wifi'){
+        if(dir == 'down'){
+          setWifiDownVotes(wifiDownVotes + 1);
+        } else {
+          setWifiUpVotes(wifiUpVotes + 1)
+        }
+    } else if(type == 'study'){
+        if(dir == 'down'){
+          setQuietDownVotes(quietDownVotes + 1);
+        } else {
+          setQuietUpVotes(quietUpVotes + 1);
+        }
+    } else if(type == 'accessible'){
+        if(dir == 'down'){
+          setAccessibilityDownVotes(accessibilityDownVotes + 1);
+        } else {
+          setAccessibilityUpVotes(accessibilityUpVotes + 1);
+        }
+    }
   }
 
   return (
@@ -121,8 +141,13 @@ function More() {
               <img src={printer} className="placeholder"></img>
               <div className="thumbs-container">
                 {/* the upvotes and downvotes icons are here */}
-                <img src={upvote} className="upvotes"></img>
-                <img src={upvote} className="downvotes"></img>
+                <button onClick={(() => sendVote('up', 'printer'))}>
+                  <img src={upvote} className="upvotes"></img>
+                </button>
+
+                <button onClick={(() => sendVote('down', 'printer'))}>
+                  <img src={upvote} className="downvotes"></img>
+                </button>
               </div>
               {/* printer, wifi, quiet, accessibility */}
               {/* the actual numbers are here  */}
@@ -142,7 +167,9 @@ function More() {
                   <img src={upvote} className="upvotes"></img>
                 </button>
 
-                <img src={upvote} className="downvotes"></img>
+                <button onClick={(() => sendVote('down', 'wifi'))}>
+                  <img src={upvote} className="downvotes"></img>
+                </button>
               </div>
               {/* the actual numbers are here  */}
               <div className="thumbs-container">
@@ -157,8 +184,13 @@ function More() {
               <img src={silence} className="placeholder"></img>
               <div className="thumbs-container">
                 {/* the upvotes and downvotes icons are here */}
-                <img src={upvote} className="upvotes"></img>
-                <img src={upvote} className="downvotes"></img>
+                  <button onClick={(() => sendVote('up', 'study'))}>
+                    <img src={upvote} className="upvotes"></img>
+                  </button>
+
+                  <button onClick={(() => sendVote('down', 'study'))}>
+                    <img src={upvote} className="downvotes"></img>
+                  </button>
               </div>
               {/* the actual numbers are here  */}
               <div className="thumbs-container">
@@ -173,8 +205,13 @@ function More() {
               <img src={wheelchair} className="placeholder"></img>
               <div className="thumbs-container">
                 {/* the upvotes and downvotes icons are here */}
-                <img src={upvote} className="upvotes"></img>
-                <img src={upvote} className="downvotes"></img>
+                <button onClick={(() => sendVote('up', 'accessible'))}>
+                    <img src={upvote} className="upvotes"></img>
+                  </button>
+
+                  <button onClick={(() => sendVote('down', 'accessible'))}>
+                    <img src={upvote} className="downvotes"></img>
+                  </button>
               </div>
               {/* the actual numbers are here  */}
               <div className="thumbs-container">
