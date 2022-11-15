@@ -2,10 +2,13 @@
 const express = require('express');
 const app = express();
 
+// import and connect to MongoDB Atlas
+require('./db');
+
 // results routes
-var resultRoutes = require("./routes/resultRoutes");
-var resourceRoutes = require("./routes/resourceRoutes");
-var commentRoutes = require("./routes/commentRoutes");
+const resultRoutes = require("./routes/resultRoutes");
+const resourceRoutes = require("./routes/resourceRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -14,11 +17,7 @@ app.use((req, res, next) => {
 });
 
 // route for HTTP GET requests to /json-example
-app.get("/", (req, res) => {
-    // send the response as JSON text to the client
-
-    res.json({ message: "message" });
-});
+app.get("/", (req, res) => res.json({ hello: "world!", server: "working" }));
 
 app.use("/results", resultRoutes);
 app.use("/resource", resourceRoutes);
