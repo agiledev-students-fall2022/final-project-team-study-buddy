@@ -29,9 +29,9 @@ const record = new Schema( {
     address: {type: String, required: true},
     city: {type: String, required: true},
     resource: {
-        wifi : Boolean,
-        bathroom: Boolean,
-        printer: Boolean
+        wifi : {type: Boolean},
+        bathroom: {type: Boolean},
+        printer: {type: Boolean}
     }
 })
 
