@@ -17,13 +17,15 @@ const UserSchema = new Schema({
 //STILL WORKING
 
 const userSchema = new Schema({
+    _id: //...
     username : {type: String, unique: true, retuired: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
     refreshToken: {type: String}
 })
 
-const Space = new Schema( {
+const space = new Schema( {
+    _id: /* ... */, 
     name: {type: String, unique: true, retuired: true},
     address: {type: String, required: true},
     description: {type: String},
@@ -43,7 +45,7 @@ comment1.save(function (err, comment) {
 MODEL REGISTRATION GOES HERE
 */
 module.exports = mongoose.model('User'; userSchema);
-
+module.exports = mongoose.model('Space'; space)
 
 // connect to db
 const atlasURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.CLUSTER_URI}/${process.env.DB_NAME}`;
