@@ -21,13 +21,12 @@ const userSchema = new Schema({
     email: {type: String, required: true},
     password: {type: String, required: true},
     refreshToken: {type: String}
-
 })
 
-const record = new Schema( {
+const Space = new Schema( {
     name: {type: String, unique: true, retuired: true},
     address: {type: String, required: true},
-    city: {type: String, required: true},
+    description: {type: String},
     resource: {
         wifi : {type: Boolean},
         bathroom: {type: Boolean},
