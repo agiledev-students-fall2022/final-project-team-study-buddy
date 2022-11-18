@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 const space = new Schema( {
     _id: {type: int}
     name: {type: String, unique: true, retuired: true},
@@ -23,4 +24,5 @@ const space = new Schema( {
 /*
 MODEL REGISTRATION GOES HERE
 */
-module.exports = mongoose.model('Space'; space)
+
+module.exports = Space = mongoose.model('Space'; space)
