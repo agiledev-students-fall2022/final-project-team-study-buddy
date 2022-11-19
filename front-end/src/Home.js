@@ -1,14 +1,17 @@
 import Icon from './Icon.js';
 import './Home.css';
 import logo from './Logo.png';
+//import Space from '../../back-end/db.js';
 
 /**
  * A React component that represents the Home page of the app.
  * @param {*} param0 an object holding any props passed to this component from its parent component
  * @returns The contents of this component, in JSX form.
  */
+
 const Home = props => {
   return (
+
     /*
     <html>
       <body>
@@ -32,13 +35,14 @@ const Home = props => {
         </div>
         </body>
     </html>*/
+
         <div id = "home-container">
           <img className = 'logo' src={logo} alt="Logo" />
           <h1 className='title'>Study Buddy</h1>
 
           <form action = '/results'>
             <p>
-              <input type='text' name='query' placeholder='Enter ZIP Code' />
+              <input type='text' name='query' placeholder='Enter ZIP Code' />     
             </p>
             <p>
               <input type='submit' value='Go  🔎' title="Search" />
