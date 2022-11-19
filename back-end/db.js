@@ -14,7 +14,31 @@ const UserSchema = new Schema({
 });
 */
 
+const space = new Schema( {
+    _id: {type: int},
+    name: {type: String, unique: true, retuired: true},
+    address: {type: String, required: true},
+    description: {type: String},
+    resource: {
+        wifi : {type: Boolean},
+        bathroom: {type: Boolean},
+        printer: {type: Boolean}
+    },
+    comments: [{
+        name: {type: String}
+        comment: {type: String}
+    }],
+    ratings: {
+        rating: {type: int}
+    }
+})
 
+/*
+MODEL REGISTRATION GOES HERE
+*/
+
+const Space = mongoose.model('Space'; space)
+module.exports = Space
 
 // connect to db
 const atlasURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.CLUSTER_URI}/${process.env.DB_NAME}`;
