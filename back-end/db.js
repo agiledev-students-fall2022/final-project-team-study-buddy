@@ -17,6 +17,7 @@ const UserSchema = new Schema({
 const space = new Schema( {
     _id: {type: int},
     name: {type: String, unique: true, required: true},
+    zip: {type: int},
     address: {type: String, required: true},
     description: {type: String},
     website: {type: String}
@@ -64,3 +65,12 @@ const doc = await space.create(
         address: "Hope it worked!",
     }
 )
+
+var collections = space.getCollectionNames();
+for(var i = 0; i< collections.length; i++){    
+   console.log('Collection: ' + collections[i]); // print the name of each collection
+   db.getCollection(collections[i]).find().forEach(printjson); //and then print the json of each of its elements
+}
+
+
+console.log("there")
