@@ -34,6 +34,16 @@ app.get("/getTestData", (req, res) => {
   });
 });
 
+app.get("/removeData", (req, res) => {
+  ResourceModel.remove({})
+    .then(() => {
+      res.send("Data removed");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 app.use("/results", resultRoutes);
 app.use("/resource", resourceRoutes);
 app.use("/comments", commentRoutes);
