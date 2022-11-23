@@ -3,9 +3,11 @@
 var express = require("express"),
   router = express.Router();
 
-const testData = require("../tests/testData.json");
+const testData = require('../test/testData.json');
 const fs = require('fs')
 
+// Add a binding to handle '/'
+router.get("/", (req, res) => res.status(400).json({ error: "No data requested." }));
 
 router.get("/:resourceID", (req, res) => {
   let rInt = Number.parseInt(req.params.resourceID);
@@ -71,11 +73,7 @@ router.post("/:resourceID/vote", (req, res) => {
       } else {
         testData[id-1].accessibleDown += 1;
       }
-
-      testData[id-1].accessible += 50;
   }
-
-  console.log(testData);
 
   return res.json(testData[id-1]);
 });
