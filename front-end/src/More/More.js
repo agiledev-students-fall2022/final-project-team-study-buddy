@@ -11,14 +11,10 @@ import silence from "../More/img/silence.png";
 import wheelchair from "../More/img/wheelchair.png";
 
 function More() {
-  const [printerUpVotes, setPrinterUpVotes] = useState(0);
-  const [printerDownVotes, setPrinterDownVotes] = useState(0);
-  const [wifiUpVotes, setWifiUpVotes] = useState(0);
-  const [wifiDownVotes, setWifiDownVotes] = useState(0);
-  const [quietUpVotes, setQuietUpVotes] = useState(0);
-  const [quietDownVotes, setQuietDownVotes] = useState(0);
-  const [accessibilityUpVotes, setAccessibilityUpVotes] = useState(0);
-  const [accessibilityDownVotes, setAccessibilityDownVotes] = useState(0);
+  const [printerVotes, setPrinterVotes] = useState(0);
+  const [wifiVotes, setWifiVotes] = useState(0);
+  const [quietVotes, setQuietVotes] = useState(0);
+  const [accessibilityVotes, setAccessibilityVotes] = useState(0);
   const [title, setTitle] = useState("");
   const [address, setAddress] = useState("");
   const [website, setWebsite] = useState("");
@@ -40,9 +36,14 @@ function More() {
           setAddress(res.data.address);
           setZIP(res.data.zip);
           setDescription(res.data.description);
+
           // replacing spaces with %20
           setWebsite(res.data.website.replaceAll(" ", "%20"));
           setMapURL(res.data.mapUrl.replaceAll(" ", "%20"));
+          setPrinterVotes(res.data.printer);
+          setWifiVotes(res.data.wifi);
+          setQuietVotes(res.data.study);
+          setAccessibilityVotes(res.data.accessibility);
         });
       } catch (err) {
         console.error(err);
@@ -65,27 +66,27 @@ function More() {
 
     if(type == 'printer'){
         if(dir == 'down'){
-          setPrinterDownVotes(printerDownVotes + 1);
+          setPrinterVotes(printerVotes - 1);
         } else {
-          setPrinterUpVotes(printerUpVotes + 1);
+          setPrinterVotes(printerVotes + 1);
         }
     } else if(type == 'wifi'){
         if(dir == 'down'){
-          setWifiDownVotes(wifiDownVotes + 1);
+          setWifiVotes(wifiVotes - 1);
         } else {
-          setWifiUpVotes(wifiUpVotes + 1)
+          setWifiVotes(wifiVotes + 1)
         }
     } else if(type == 'study'){
         if(dir == 'down'){
-          setQuietDownVotes(quietDownVotes + 1);
+          setQuietVotes(quietVotes - 1);
         } else {
-          setQuietUpVotes(quietUpVotes + 1);
+          setQuietVotes(quietVotes + 1);
         }
     } else if(type == 'accessible'){
         if(dir == 'down'){
-          setAccessibilityDownVotes(accessibilityDownVotes + 1);
+          setAccessibilityVotes(accessibilityVotes - 1);
         } else {
-          setAccessibilityUpVotes(accessibilityUpVotes + 1);
+          setAccessibilityVotes(accessibilityVotes + 1);
         }
     }
   }
@@ -141,20 +142,21 @@ function More() {
               <img src={printer} className="placeholder"></img>
               <div className="thumbs-container">
                 {/* the upvotes and downvotes icons are here */}
-                <button onClick={(() => sendVote('up', 'printer'))}>
+                <button class = "voteBtn" onClick={(() => sendVote('up', 'printer'))}>
                   <img src={upvote} className="upvotes"></img>
                 </button>
 
-                <button onClick={(() => sendVote('down', 'printer'))}>
+                <div>
+                {/* the actual numbers are here  */}
+                <h1 className="num"> {printerVotes} </h1>
+                </div>
+
+
+                <button class = "voteBtn" onClick={(() => sendVote('down', 'printer'))}>
                   <img src={upvote} className="downvotes"></img>
                 </button>
               </div>
               {/* printer, wifi, quiet, accessibility */}
-              {/* the actual numbers are here  */}
-              <div className="thumbs-container">
-                <h1 className="num"> {printerUpVotes} </h1>
-                <h1 className="num"> {printerDownVotes} </h1>
-              </div>
             </div>
 
             {/* wifi */}
@@ -163,19 +165,18 @@ function More() {
               <img src={blueGlobe} className="placeholder"></img>
               <div className="thumbs-container">
                 {/* the upvotes and downvotes icons are here */}
-                <button onClick={(() => sendVote('up', 'wifi'))}>
+                <button class = "voteBtn" onClick={(() => sendVote('up', 'wifi'))}>
                   <img src={upvote} className="upvotes"></img>
                 </button>
 
-                <button onClick={(() => sendVote('down', 'wifi'))}>
+                {/* the actual numbers are here  */}
+                <h1 className="num"> {wifiVotes} </h1>
+
+                <button class = "voteBtn" onClick={(() => sendVote('down', 'wifi'))}>
                   <img src={upvote} className="downvotes"></img>
                 </button>
               </div>
-              {/* the actual numbers are here  */}
-              <div className="thumbs-container">
-                <h1 className="num"> {wifiUpVotes} </h1>
-                <h1 className="num"> {wifiDownVotes} </h1>
-              </div>
+
             </div>
 
             {/* silence */}
@@ -184,19 +185,18 @@ function More() {
               <img src={silence} className="placeholder"></img>
               <div className="thumbs-container">
                 {/* the upvotes and downvotes icons are here */}
-                  <button onClick={(() => sendVote('up', 'study'))}>
+                  <button class = "voteBtn" onClick={(() => sendVote('up', 'study'))}>
                     <img src={upvote} className="upvotes"></img>
                   </button>
 
-                  <button onClick={(() => sendVote('down', 'study'))}>
+                  {/* the actual numbers are here  */}
+                  <h1 className="num"> {quietVotes} </h1>
+
+                  <button class = "voteBtn" onClick={(() => sendVote('down', 'study'))}>
                     <img src={upvote} className="downvotes"></img>
                   </button>
               </div>
-              {/* the actual numbers are here  */}
-              <div className="thumbs-container">
-                <h1 className="num"> {quietUpVotes} </h1>
-                <h1 className="num"> {quietDownVotes} </h1>
-              </div>
+
             </div>
 
             {/* accessibility */}
@@ -205,19 +205,18 @@ function More() {
               <img src={wheelchair} className="placeholder"></img>
               <div className="thumbs-container">
                 {/* the upvotes and downvotes icons are here */}
-                <button onClick={(() => sendVote('up', 'accessible'))}>
+                <button class = "voteBtn" onClick={(() => sendVote('up', 'accessible'))}>
                     <img src={upvote} className="upvotes"></img>
                   </button>
 
-                  <button onClick={(() => sendVote('down', 'accessible'))}>
+                  {/* the actual numbers are here  */}
+                  <h1 className="num"> {accessibilityVotes} </h1>
+
+                  <button class = "voteBtn" onClick={(() => sendVote('down', 'accessible'))}>
                     <img src={upvote} className="downvotes"></img>
                   </button>
               </div>
-              {/* the actual numbers are here  */}
-              <div className="thumbs-container">
-                <h1 className="num"> {accessibilityUpVotes} </h1>
-                <h1 className="num"> {accessibilityDownVotes} </h1>
-              </div>
+
             </div>
           </div>
         </div>

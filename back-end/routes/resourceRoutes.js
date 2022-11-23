@@ -51,27 +51,27 @@ router.post("/:resourceID/vote", (req, res) => {
   switch(type) {
     case "printer":
       if(direction == 'down'){
-        testData[id-1].printerDown += 1;
+        testData[id-1].printer -= 1;
       } else {
         testData[id-1].printer += 1;
       }
     case "wifi":
       if(direction == 'down'){
-        testData[id-1].wifiDown += 1;
+        testData[id-1].wifi -= 1;
       } else {
         testData[id-1].wifi += 1;
       }
     case "study":
       if(direction == 'down'){
-        testData[id-1].studyDown += 1;
+        testData[id-1].study -= 1;
       } else {
         testData[id-1].study += 1;
       }
     case "accessible":
       if(direction == 'down'){
-        testData[id-1].accessibleDown += 1;
+        testData[id-1].accessibleDown -= 1;
       } else {
-        testData[id-1].accessibleDown += 1;
+        testData[id-1].accessibleDown -= 1;
       }
   }
 
