@@ -11,7 +11,6 @@
 
 .num {
     text-align: center;
-    padding-right: 20px;
     font-size: 20%;
     font-family: Inter;
 }
@@ -65,19 +64,25 @@
 
 /* styling icons */
 .icon-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-rating{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .thumbs-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5px;
 }
 
 .placeholder{
-    padding-left: 10px;
     height: 50%;
     width: 50%;
 }
@@ -97,13 +102,18 @@
 
 .downvotes{
     transform: rotate(180deg);
-    height: 90%;
-    width: 50%;
+    height: 70%;
+    width: 30%;
 }
 
 .upvotes{
-    height: 90%;
-    width: 50%;
+    height: 70%;
+    width: 30%;
+}
+
+.voteBtn{
+    padding: 0px;
+    margin: 0px;
 }
 
 .more-logo{
@@ -112,6 +122,11 @@
     width: 6%;
     padding-top: 40px;
     padding-left: 60px;
+}
+
+.icon-container button {
+    border: none;
+    background: none;
 }
 
 @media (max-width: 650px) {

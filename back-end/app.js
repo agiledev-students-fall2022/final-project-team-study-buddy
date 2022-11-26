@@ -6,6 +6,8 @@ const ResourceModel = require("./db/schema");
 // import and connect to MongoDB Atlas
 require("./db/db");
 
+app.use(express.json());
+
 // results routes
 const resultRoutes = require("./routes/resultRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
