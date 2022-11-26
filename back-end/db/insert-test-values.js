@@ -45,7 +45,7 @@ let testResources = [
       printer: 4,
       network: 4,
       quiet: 4,
-      accessability: 4,
+      accessibility: 4,
     },
   },
   {
@@ -74,7 +74,7 @@ let testResources = [
       printer: 4,
       network: 3,
       quiet: 4,
-      accessability: 0,
+      accessibility: 0,
     },
   },
   {
@@ -102,7 +102,7 @@ let testResources = [
       printer: 4,
       network: 4,
       quiet: 4,
-      accessability: 4,
+      accessibility: 4,
     },
   },
   {
@@ -131,7 +131,7 @@ let testResources = [
       printer: 4,
       network: 4,
       quiet: 4,
-      accessability: 4,
+      accessibility: 4,
     },
   },
   {
@@ -151,7 +151,7 @@ let testResources = [
       printer: 0,
       network: 0,
       quiet: 0,
-      accessability: 4,
+      accessibility: 4,
     },
     comments: [
       {

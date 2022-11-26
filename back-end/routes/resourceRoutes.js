@@ -4,7 +4,8 @@ var express = require("express"),
   router = express.Router();
 
 const testData = require('../test/testData.json');
-const fs = require('fs')
+const ResourceModel = require("../db/schema");
+const fs = require('fs');
 
 // Add a binding to handle '/'
 router.get("/", (req, res) => res.status(400).json({ error: "No data requested." }));
@@ -22,17 +23,20 @@ router.get("/:resourceID", (req, res) => {
   }
 
   // Get results from database with correct id
-  result = testData[rInt - 1];
-  if (result === undefined) {
-    return res
-      .status(404)
-      .json({ message: "Could not find a resource with that ID." });
-  }
-
-  // Add map url
-  result.mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=${result.address}`;
-
-  return res.json(result);
+  const getData = async() => {
+    let result = await ResourceModel.findOne({ _id: rInt }).lean();
+    if (result === undefined) {
+      return res
+        .status(404)
+        .json({ message: "Could not find a resource with that ID." });
+    }  
+  
+    // Add map url
+    result.mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=${result.address}`;
+    return res.json(result)
+  };
+  
+  return getData();
 });
 
 router.post("/:resourceID/vote", (req, res) => {
