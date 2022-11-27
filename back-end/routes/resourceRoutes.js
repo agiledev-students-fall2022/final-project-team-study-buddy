@@ -6,10 +6,13 @@ var express = require("express"),
 const testData = require('../test/testData.json');
 const fs = require('fs')
 
+const mongoose = require('mongoose');
+const ResourceModel = require("../db/schema");
+
 // Add a binding to handle '/'
 router.get("/", (req, res) => res.status(400).json({ error: "No data requested." }));
 
-router.get("/:resourceID", (req, res) => {
+router.get("/:resourceID", async (req, res) => {
   let rInt = Number.parseInt(req.params.resourceID);
   if (
     [undefined, null, ""].includes(req.params.resourceID) ||
@@ -22,20 +25,23 @@ router.get("/:resourceID", (req, res) => {
   }
 
   // Get results from database with correct id
-  result = testData[rInt - 1];
+  const Resource = ResourceModel;
+
+  const result = await Resource.find({_id: rInt});
+  console.log("RESULT: ", result[0]);
+  //result = testData[rInt - 1];
   if (result === undefined) {
     return res
       .status(404)
       .json({ message: "Could not find a resource with that ID." });
   }
 
-  // Add map url
-  result.mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}&q=${result.address}`;
+  console.log("RES SECOND TIME: ", result)
 
-  return res.json(result);
+  return res.json(result[0]);
 });
 
-router.post("/:resourceID/vote", (req, res) => {
+router.post("/:resourceID/vote", async (req, res) => {
   // console.log(req.body);
   const id = req.params.resourceID;
   const direction = req.body.direction;
@@ -48,34 +54,41 @@ router.post("/:resourceID/vote", (req, res) => {
     return res.status(400).json({message: 'Invalid vote type.'});
   }
 
+  const Resource = ResourceModel;
+  let result = await Resource.find({_id: id});
+  result = result[0];
+  console.log("found: ", result.ratings);
+
   switch(type) {
     case "printer":
       if(direction == 'down'){
-        testData[id-1].printer -= 1;
+        result.ratings.printer = result.ratings.printer - 1;
       } else {
-        testData[id-1].printer += 1;
+        result.ratings.printer = result.ratings.printer + 1;
       }
     case "wifi":
       if(direction == 'down'){
-        testData[id-1].wifi -= 1;
+        result.ratings.network = result.ratings.network - 1;
       } else {
-        testData[id-1].wifi += 1;
+        result.ratings.network = result.ratings.network + 1;
       }
     case "study":
       if(direction == 'down'){
-        testData[id-1].study -= 1;
+        result.ratings.quiet = result.ratings.quiet - 1;
       } else {
-        testData[id-1].study += 1;
+        result.ratings.quiet = result.ratings.quiet + 1;
       }
     case "accessible":
       if(direction == 'down'){
-        testData[id-1].accessibleDown -= 1;
+        result.ratings.accessibility = result.ratings.accessibility - 1;
       } else {
-        testData[id-1].accessibleDown -= 1;
+        result.ratings.accessibility = result.ratings.accessibility + 1;
       }
   }
 
-  return res.json(testData[id-1]);
+  await result.save();
+
+  return res.json(result);
 });
 
 module.exports = router;

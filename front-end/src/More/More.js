@@ -31,7 +31,7 @@ function More() {
     const fetchResults = async () => {
       try {
         await axios.get(`http://localhost:3001/resource/${id}`).then((res) => {
-          console.log(res.data);
+          console.log("res: ", res.data.ratings.printer);
           setTitle(res.data.name);
           setAddress(res.data.address);
           setZIP(res.data.zip);
@@ -39,11 +39,11 @@ function More() {
 
           // replacing spaces with %20
           setWebsite(res.data.website.replaceAll(" ", "%20"));
-          setMapURL(res.data.mapUrl.replaceAll(" ", "%20"));
-          setPrinterVotes(res.data.printer);
-          setWifiVotes(res.data.wifi);
-          setQuietVotes(res.data.study);
-          setAccessibilityVotes(res.data.accessibility);
+          //setMapURL(res.data.mapUrl.replaceAll(" ", "%20"));
+          setPrinterVotes(res.data.ratings.printer);
+          setWifiVotes(res.data.ratings.network);
+          setQuietVotes(res.data.ratings.quiet);
+          setAccessibilityVotes(res.data.ratings.accessibility);
         });
       } catch (err) {
         console.error(err);
