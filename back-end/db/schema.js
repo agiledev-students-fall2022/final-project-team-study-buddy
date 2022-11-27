@@ -25,7 +25,7 @@ const ResourceModelSchema = new mongoose.Schema({
     printer: { type: Number, required: true },
     network: { type: Number, required: true },
     quiet: { type: Number, required: true },
-    accessability: { type: Number, required: true },
+    accessibility: { type: Number, required: true },
   },
 });
 
