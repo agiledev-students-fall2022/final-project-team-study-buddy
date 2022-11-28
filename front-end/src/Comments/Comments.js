@@ -9,7 +9,7 @@ import {
   deleteComment as deleteCommentApi,
 } from "./api";
 
-const Comments = ({ commentsUrl, currentUserId }) => {
+const Comments = ({ currentUserId }) => {
   const params = new URLSearchParams(window.location.search);
   const resId = params.get('resource_id');
   
