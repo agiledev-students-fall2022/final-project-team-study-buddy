@@ -5,10 +5,11 @@ var express = require("express"),
 
 const testData = require('../test/testData.json');
 const ResourceModel = require("../db/schema");
-const fs = require('fs');
 
 const mongoose = require('mongoose');
-const ResourceModel = require("../db/schema");
+
+const { body, validationResult } = require('express-validator');
+
 
 // Add a binding to handle '/'
 router.get("/", (req, res) => res.status(400).json({ error: "No data requested." }));
@@ -42,11 +43,21 @@ router.get("/:resourceID", async (req, res) => {
   return getData();
 });
 
-router.post("/:resourceID/vote", async (req, res) => {
+router.post(
+  "/:resourceID/vote",
+  body('type').isIn(['wifi', 'printer', 'study', 'accessible']),
+  body('direction').isIn(['up', 'down']),
+  async (req, res) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+      return res.status(400).json({errors: errors.array()});
+    }
   // console.log(req.body);
   const id = req.params.resourceID;
   const direction = req.body.direction;
   const type = req.body.type;
+
+  console.log("REQ: ", req.body);
 
   // data validation
   if (!['up', 'down'].includes(direction.toLowerCase())) {
@@ -58,34 +69,37 @@ router.post("/:resourceID/vote", async (req, res) => {
   const Resource = ResourceModel;
   let result = await Resource.find({_id: id});
   result = result[0];
-  console.log("found: ", result.ratings);
 
-  switch(type) {
-    case "printer":
+
+    if(type == "printer"){
       if(direction == 'down'){
         result.ratings.printer = result.ratings.printer - 1;
       } else {
         result.ratings.printer = result.ratings.printer + 1;
       }
-    case "wifi":
+    }
+    else if(type == "wifi"){
       if(direction == 'down'){
         result.ratings.network = result.ratings.network - 1;
       } else {
         result.ratings.network = result.ratings.network + 1;
       }
-    case "study":
+    }
+    else if(type == "study"){
       if(direction == 'down'){
         result.ratings.quiet = result.ratings.quiet - 1;
       } else {
         result.ratings.quiet = result.ratings.quiet + 1;
       }
-    case "accessible":
+    }
+    else if(type =="accessible"){
       if(direction == 'down'){
         result.ratings.accessibility = result.ratings.accessibility - 1;
       } else {
         result.ratings.accessibility = result.ratings.accessibility + 1;
       }
-  }
+    }
+  
 
   await result.save();
 

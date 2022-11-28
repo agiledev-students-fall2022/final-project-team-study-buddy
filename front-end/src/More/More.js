@@ -61,11 +61,8 @@ function More() {
       direction: dir,
       type: type
     };
-    let res = await axios.post(`http://localhost:3001/resource/${id}/vote`, data);
-    console.log(res.data);
     
-    console.log("-----  " + type + "  --------");
-
+    let res = await axios.post(`http://localhost:3001/resource/${id}/vote`, data);
     if(type == 'printer'){
         if(dir == 'down'){
           setPrinterVotes(printerVotes - 1);
