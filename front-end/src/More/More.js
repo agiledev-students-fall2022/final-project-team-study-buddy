@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../More/More.css";
 import axios from "axios";
 
+import Comments from "../Comments/Comments";
+
 import logo from "../More/img/study-buddy-logo.png";
 import upvote from "../More/img/upvote.png";
 import printer from "../More/img/printer.png";
@@ -39,7 +41,7 @@ function More() {
 
           // replacing spaces with %20
           setWebsite(res.data.website.replaceAll(" ", "%20"));
-          //setMapURL(res.data.mapUrl.replaceAll(" ", "%20"));
+          setMapURL(res.data.mapUrl.replaceAll(" ", "%20"));
           setPrinterVotes(res.data.ratings.printer);
           setWifiVotes(res.data.ratings.network);
           setQuietVotes(res.data.ratings.quiet);
@@ -221,6 +223,7 @@ function More() {
           </div>
         </div>
       </div>
+      <Comments currentUserId={1}/>
     </div>
   );
 }
