@@ -16,9 +16,9 @@ const Comments = ({ currentUserId }) => {
   const [resourceID, setResourceID] = useState(resId)
   const [backendComments, setBackendComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
-  const rootComments = backendComments.filter(
-    (backendComment) => backendComment.parentId === null
-  );
+  const rootComments = backendComments
+    .filter((backendComment) => backendComment.parentId === null)
+    .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
 
   const getReplies = (commentId) => 
     backendComments
@@ -54,8 +54,8 @@ const Comments = ({ currentUserId }) => {
 
   useEffect(() => {
     getCommentsApi(resourceID).then((data) => {
-      setBackendComments(data.comments);
-      console.log(data.comments);
+      setBackendComments(data);
+      console.log(data);
     });
   }, [resourceID]);
 
