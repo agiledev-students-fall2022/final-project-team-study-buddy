@@ -6,14 +6,12 @@ RUN mkdir -p /usr/src/study-buddy
 RUN mkdir -p /usr/src/study-buddy/front-end
 WORKDIR /usr/src/study-buddy/front-end
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# install app dependencies (use package.json AND package-lock.json)
 COPY package*.json ./
 
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
+# for production
+RUN npm ci --only=production
 
 # bundle app source
 COPY . .
