@@ -61,8 +61,7 @@ const Comments = ({ currentUserId }) => {
 
   return (
     <div className="comments">
-      <div className="comments-title">COMMENTS</div>
-      <div className="comment-form-title">leave comment</div>
+      <div className="comment-form-title">Leave a comment!</div>
       <CommentForm submitLabel="Write" handleSubmit={addComment} />
       <div className="comments-container">
         {rootComments.map((rootComment) => (

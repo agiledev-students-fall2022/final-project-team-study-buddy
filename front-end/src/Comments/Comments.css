@@ -26,15 +26,15 @@
     padding: 10px;
 
     font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 22px;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 15px;
 
     color: #000000;
   }
   
   .comment-form-textarea {
-    width: 800px;
+    width: 400px;
     height: 80px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -42,10 +42,13 @@
   }
   
   .comment-form-button {
-    font-size: 16px;
+    font-size: 15px;
     padding: 8px 16px;
     background: rgb(58, 58, 58);
     color: white;
+
+    font-family: 'Inter';
+    font-style: normal;
   }
   
   .comment-form-button:hover:enabled {
@@ -84,8 +87,8 @@
 
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 300;
-    font-size: 25px;
+    font-weight: 400;
+    font-size: 15px;
     line-height: 30px;
 
     color: #000000;
@@ -93,13 +96,13 @@
   
   .comment-author {
     margin-right: 8px;
-    font-size: 20px;
+    font-size: 15px;
 
     display: flex;
     
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 30px;
 
     color: rgb(80, 80, 80);
@@ -109,18 +112,18 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 15px;
 
     color: #000000;
   }
   
   .comment-text {
-    font-size: 18px;
+    font-size: 15px;
 
     text-align: left;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
 
     color: #000000;
   }
