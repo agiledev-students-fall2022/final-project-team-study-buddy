@@ -215,12 +215,11 @@ function More() {
                     <img src={upvote} className="downvotes"></img>
                   </button>
               </div>
-
             </div>
           </div>
+          <Comments currentUserId={1}/>
         </div>
       </div>
-      <Comments currentUserId={1}/>
     </div>
   );
 }
