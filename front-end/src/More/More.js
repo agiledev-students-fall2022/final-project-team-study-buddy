@@ -63,26 +63,26 @@ function More() {
     };
     
     let res = await axios.post(`http://localhost:3001/resource/${id}/vote`, data);
-    if(type == 'printer'){
-        if(dir == 'down'){
+    if(type === 'printer'){
+        if(dir === 'down'){
           setPrinterVotes(printerVotes - 1);
         } else {
           setPrinterVotes(printerVotes + 1);
         }
-    } else if(type == 'wifi'){
-        if(dir == 'down'){
+    } else if(type === 'wifi'){
+        if(dir === 'down'){
           setWifiVotes(wifiVotes - 1);
         } else {
           setWifiVotes(wifiVotes + 1)
         }
-    } else if(type == 'study'){
-        if(dir == 'down'){
+    } else if(type === 'study'){
+        if(dir === 'down'){
           setQuietVotes(quietVotes - 1);
         } else {
           setQuietVotes(quietVotes + 1);
         }
-    } else if(type == 'accessible'){
-        if(dir == 'down'){
+    } else if(type === 'accessible'){
+        if(dir === 'down'){
           setAccessibilityVotes(accessibilityVotes - 1);
         } else {
           setAccessibilityVotes(accessibilityVotes + 1);
