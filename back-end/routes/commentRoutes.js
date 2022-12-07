@@ -4,6 +4,7 @@ const setResourceApi = api.setResource;
 
 const express = require('express');
 const { escapeHtml } = require('markdown-it/lib/common/utils');
+const { body, validationResult } = require('express-validator');
 let router = express.Router();
 router.use(express.json());
 //const { router } = require('../app');
@@ -30,7 +31,12 @@ router.get('/:resourceID', async (req, res) => {
     return res.json(resource.comments);
 });
 
-router.post("/add", async (req, res) => {
+router.post("/add", body('comment').isLength({ min: 2 }), body('locationID').isNumeric(), async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
     const lid = Number.parseInt(req.body.locationID);
     if ([undefined, null, ""].includes(req.body.locationID) || lid === 0 || Number.isNaN(lid)) {
         return res.status(400).json({message: 'Invalid resource ID.'});
