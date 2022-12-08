@@ -15,12 +15,12 @@ nearby. Venues will also have their own information pages.
 
 ## Core Team Members
 
+- Nico Bykhovsky: [GitHub](https://github.com/Bykho-git)
 - Shay Gyawali: [GitHub](https://github.com/shaygyawali) | [Personal Website](http://shaygyawali.me)
 - Ben Schwartz: [GitHub](https://github.com/bls1999) | [Jiggmin's Village](https://jiggmin2.com/)
 - Brandon Somoza: [GitHub](https://github.com/BrandonSomoza)
 - Kevin Wu: [GitHub](https://github.com/kevin1289) | [Python Anywhere](https://kevinwu.pythonanywhere.com/)
 - Abigail Zhou: [GitHub](https://github.com/abigailzhou03)
-- Nico Bykhovsky: [GitHub](https://github.com/Bykho-git)
 
 ## Project History
 
