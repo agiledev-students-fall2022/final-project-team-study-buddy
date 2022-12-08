@@ -1,7 +1,8 @@
 # Study Buddy
 
-Website Link: https://dolphin-app-tj6ou.ondigitalocean.app/
-Github Repo: https://github.com/agiledev-students-fall2022/final-project-team-study-buddy
+[Site Link](https://dolphin-app-tj6ou.ondigitalocean.app/)
+
+[GitHub Repository](https://github.com/agiledev-students-fall2022/final-project-team-study-buddy)
 
 ## Description
 
@@ -11,7 +12,7 @@ At its most basic implementation, *Study Buddy* will be a web app able to show s
 
 ## Core Team Members
 
-- Shay Gyawali: [GitHub](https://github.com/shaygyawali) | [Personal Website](http://shaygyawali.me)
+- Shay Gyawali: [GitHub](https://github.com/shaygyawali) | [Personal Site](http://shaygyawali.me)
 - Ben Schwartz: [GitHub](https://github.com/bls1999) | [Jiggmin's Village](https://jiggmin2.com/)
 - Brandon Somoza: [GitHub](https://github.com/BrandonSomoza)
 - Kevin Wu: [GitHub](https://github.com/kevin1289) | [Python Anywhere](https://kevinwu.pythonanywhere.com/)
