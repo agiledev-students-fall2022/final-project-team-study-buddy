@@ -9,24 +9,8 @@ export const getComments = async (resourceId) => {
   return res.data;
 };
 
-export const createComment = async (
-  resourceId,
-  userId,
-  username,
-  text,
-  parentId = null
-) => {
-  let res = await axios.post(
-    `http://${process.env.REACT_APP_SERVER_URL}/comments/add`,
-    {
-      locationID: resourceId,
-      userId: userId,
-      username: username,
-      comment: text,
-      parentId: parentId,
-    }
-  );
-  console.log(res);
+export const createComment = async (resourceId, text, parentId = null) => {
+  let res = await axios.post(`http://${process.env.REACT_APP_SERVER_URL}/comments/add`, { locationID: resourceId, comment: text, parentId: parentId });
   return res.data;
 };
 
