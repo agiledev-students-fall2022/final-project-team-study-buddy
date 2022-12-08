@@ -73,8 +73,6 @@ function ListComponent(props) {
           <p>{address}</p>
           <p>{description}</p>
           <details>
-            <summary id = "button">Learn More</summary>
-            <p><button id = "button">Google Maps</button><button id = "button">Reviews</button><button id = "button">Comment</button></p>
           </details>
         </div>
       )}
