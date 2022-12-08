@@ -39,6 +39,15 @@ router.get('/:resourceID', async (req, res) => {
   return getData()
 })
 
+let printerUp = false
+let printerDown = false
+let wifiUp = false
+let wifiDown = false
+let studyUp = false
+let studyDown = false
+let accessibleUp = false
+let accessibleDown = false
+
 router.post(
   '/:resourceID/vote',
   body('type').isIn(['wifi', 'printer', 'study', 'accessible']),
@@ -68,30 +77,79 @@ router.post(
     let result = await Resource.find({ _id: id })
     result = result[0]
 
-    if (type === 'printer') {
-      if (direction === 'down') {
-        result.ratings.printer = result.ratings.printer - 1
+    if (type == "printer") {
+      if (direction == "down") {
+        if (printerDown === false){
+          result.ratings.printer = result.ratings.printer - 1
+          printerDown = true
+          printerUp = false
+        }
+        // result.ratings.printer = result.ratings.printer - 1;
       } else {
-        result.ratings.printer = result.ratings.printer + 1
+        if (printerUp === false){
+          result.ratings.printer = result.ratings.printer + 1
+          printerDown = false
+          printerUp = true
+        }
+        // result.ratings.printer = result.ratings.printer + 1;
       }
-    } else if (type === 'wifi') {
-      if (direction === 'down') {
-        result.ratings.network = result.ratings.network - 1
+    } else if (type == "wifi") {
+      if (direction == "down") {
+        if (wifiDown === false){
+          result.ratings.network = result.ratings.network - 1
+          wifiDown = true
+          wifiUp = false
+        }
       } else {
-        result.ratings.network = result.ratings.network + 1
+        if (wifiUp === false){
+          result.ratings.network = result.ratings.network + 1
+          wifiDown = false
+          wifiUp = true
+        }
       }
-    } else if (type === 'study') {
-      if (direction === 'down') {
-        result.ratings.quiet = result.ratings.quiet - 1
+      // if (direction == "down") {
+      //   result.ratings.network = result.ratings.network - 1;
+      // } else {
+      //   result.ratings.network = result.ratings.network + 1;
+      // }
+    } else if (type == "study") {
+      if (direction == "down") {
+        if (studyDown === false){
+          result.ratings.quiet = result.ratings.quiet - 1
+          studyDown = true
+          studyUp = false
+        }
       } else {
-        result.ratings.quiet = result.ratings.quiet + 1
+        if (studyUp === false){
+          result.ratings.quiet = result.ratings.quiet + 1
+          studyDown = false
+          studyUp = true
+        }
       }
-    } else if (type === 'accessible') {
-      if (direction === 'down') {
-        result.ratings.accessibility = result.ratings.accessibility - 1
+      // if (direction == "down") {
+      //   result.ratings.quiet = result.ratings.quiet - 1;
+      // } else {
+      //   result.ratings.quiet = result.ratings.quiet + 1;
+      // }
+    } else if (type == "accessible") {
+      if (direction == "down") {
+        if (accessibleDown === false){
+          result.ratings.accessibility = result.ratings.accessibility - 1
+          accessibleDown = true
+          accessibleUp = false
+        }
       } else {
-        result.ratings.accessibility = result.ratings.accessibility + 1
+        if (accessibleUp === false){
+          result.ratings.accessibility = result.ratings.accessibility + 1
+          accessibleDown = false
+          accessibleUp = true
+        }
       }
+      // if (direction == "down") {
+      //   result.ratings.accessibility = result.ratings.accessibility - 1;
+      // } else {
+      //   result.ratings.accessibility = result.ratings.accessibility + 1;
+      // }
     }
 
     await result.save()

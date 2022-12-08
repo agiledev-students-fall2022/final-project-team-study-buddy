@@ -1,35 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import '../More/More.css'
-import axios from 'axios'
+import React, { useEffect, useState } from "react"
+import "../More/More.css"
+import axios from "axios"
+import Comments from "../Comments/Comments"
+import logo from "../More/img/study-buddy-logo.png"
+import upvote from "../More/img/upvote.png"
+import printer from "../More/img/printer.png"
+import blackGlobe from "../More/img/black_globe.png"
+import blueGlobe from "../More/img/blue_globe.png"
+import silence from "../More/img/silence.png"
+import wheelchair from "../More/img/wheelchair.png"
 
-import Comments from '../Comments/Comments'
+let printerUp = false
+let printerDown = false
+let wifiUp = false
+let wifiDown = false
+let studyUp = false
+let studyDown = false
+let accessibleUp = false
+let accessibleDown = false
 
-import logo from '../More/img/study-buddy-logo.png'
-import upvote from '../More/img/upvote.png'
-import printer from '../More/img/printer.png'
-import blackGlobe from '../More/img/black_globe.png'
-import blueGlobe from '../More/img/blue_globe.png'
-import silence from '../More/img/silence.png'
-import wheelchair from '../More/img/wheelchair.png'
+function More() {
+  const [printerVotes, setPrinterVotes] = useState(0);
+  const [wifiVotes, setWifiVotes] = useState(0);
+  const [quietVotes, setQuietVotes] = useState(0);
+  const [accessibilityVotes, setAccessibilityVotes] = useState(0);
+  const [title, setTitle] = useState("");
+  const [address, setAddress] = useState("");
+  const [website, setWebsite] = useState("");
+  const [description, setDescription] = useState("");
+  const [mapURL, setMapURL] = useState("");
+  const [zip, setZIP] = useState("");
 
-function More () {
-  const [printerVotes, setPrinterVotes] = useState(0)
-  const [wifiVotes, setWifiVotes] = useState(0)
-  const [quietVotes, setQuietVotes] = useState(0)
-  const [accessibilityVotes, setAccessibilityVotes] = useState(0)
-  const [title, setTitle] = useState('')
-  const [address, setAddress] = useState('')
-  const [website, setWebsite] = useState('')
-  const [description, setDescription] = useState('')
-  const [mapURL, setMapURL] = useState('')
-  const [zip, setZIP] = useState('')
+  const [error, setError] = useState("");
 
-  console.log(zip)
-
-  const [error, setError] = useState('')
-
-  const params = new URLSearchParams(window.location.search)
-  const id = params.get('resource_id')
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("resource_id");
 
   useEffect(() => {
     const fetchResults = async () => {
@@ -68,32 +73,74 @@ function More () {
     const res = await axios.post(
       `http://${process.env.REACT_APP_SERVER_URL}/resource/${id}/vote`,
       data
-    )
-    console.log(res)
-    if (type === 'printer') {
-      if (dir === 'down') {
-        setPrinterVotes(printerVotes - 1)
+    );
+
+    if (type === "printer") {
+      if (dir === "down") {
+        if(printerDown === false){
+          setPrinterVotes(printerVotes - 1)
+          printerDown = true
+          printerUp = false
+        }
       } else {
-        setPrinterVotes(printerVotes + 1)
+        if(printerUp === false){
+          setPrinterVotes(printerVotes + 1)
+          printerUp = true
+          printerDown = false
+        }
       }
-    } else if (type === 'wifi') {
-      if (dir === 'down') {
-        setWifiVotes(wifiVotes - 1)
+    } else if (type === "wifi") {
+      if (dir === "down") {
+        if(wifiDown === false){
+          setWifiVotes(wifiVotes - 1)
+          wifiDown = true
+          wifiUp = false
+        }
       } else {
-        setWifiVotes(wifiVotes + 1)
+        if(wifiUp === false){
+          setWifiVotes(wifiVotes + 1)
+          wifiDown = false
+          wifiUp = true
+        }
       }
-    } else if (type === 'study') {
-      if (dir === 'down') {
-        setQuietVotes(quietVotes - 1)
+    } else if (type === "study") {
+      if (dir === "down") {
+        if(studyDown === false){
+          setQuietVotes(quietVotes - 1)
+          studyDown = true
+          studyUp = false
+        }
       } else {
-        setQuietVotes(quietVotes + 1)
+        if(studyUp === false){
+          setQuietVotes(quietVotes + 1)
+          studyDown = false
+          studyUp = true
+        }
       }
-    } else if (type === 'accessible') {
-      if (dir === 'down') {
-        setAccessibilityVotes(accessibilityVotes - 1)
+      // if (dir === "down") {
+      //   setQuietVotes(quietVotes - 1);
+      // } else {
+      //   setQuietVotes(quietVotes + 1);
+      // }
+    } else if (type === "accessible") {
+      if (dir === "down") {
+        if(accessibleDown === false){
+          setAccessibilityVotes(accessibilityVotes - 1)
+          accessibleDown = true
+          accessibleUp = false
+        }
       } else {
-        setAccessibilityVotes(accessibilityVotes + 1)
+        if(accessibleUp === false){
+          setAccessibilityVotes(accessibilityVotes + 1)
+          accessibleDown = false
+          accessibleUp = true
+        }
       }
+      // if (dir === "down") {
+      //   setAccessibilityVotes(accessibilityVotes - 1);
+      // } else {
+      //   setAccessibilityVotes(accessibilityVotes + 1);
+      // }
     }
   }
 

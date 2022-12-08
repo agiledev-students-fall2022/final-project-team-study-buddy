@@ -24,6 +24,14 @@ router.get('/:zip', (req, res) => {
       results.push(place)
     }
   })
+    const zip = parseInt(req.params.zip);
+    const {wifi, printer, study} = req.params;
+    let results = [];
+    testData.forEach(place => { 
+        if (place.zip === zip) {
+            results.push(place);
+        }
+    });
 
   if (results.length > 0) {
     return res.json({ results }) // return data in usable format
@@ -31,17 +39,5 @@ router.get('/:zip', (req, res) => {
     return res.status(404).json({ results })
   }
 })
-
-// overlapping with resourceRoutes
-/* router.get("/:zip/:placeId", (req, res) => {
-    // validate zip code
-    if (!isValidZIP(req.params.zip)) {
-        return res.status(404).json({ error: "Invalid ZIP requested." });
-    }
-    const zip = req.params.zip;
-    const placeId = req.params.placeId; // no validation needed yet, unless we want this to be a name instead
-    const place = {}; // sprint 3: query database to get the requested place
-    return res.json({ place: place });
-}); */
 
 module.exports = router

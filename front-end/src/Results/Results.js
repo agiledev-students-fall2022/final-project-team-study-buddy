@@ -3,7 +3,6 @@ import './Results.css'
 import axios from 'axios'
 import Header from './Header/header'
 import Result from './listComponent'
-// import app from "../../../back-end/app";
 
 function Results () {
   const [printer, setPrinter] = useState(true)
@@ -40,17 +39,8 @@ function Results () {
   }, [])
 
   const resultShower = () => {
-    // return "IN RESULT";
     let status = false
-
-    // Set up below here an API call to the backend to display data from resultRoutes.js --NICO
-    // What Kevin Wrote Before=> return testResults.map((result) => { --NICO
-
-    // This alert is just to show that the front end gets the correct data-- NICO
-
-    // x = pipe.data;
-    console.log('data: ', data.results)
-    // return <div>HELLO</div>;
+    console.log("data: ", data.results)
     return data.results.map((result, id) => {
       status =
         (printer && result.printer) ||

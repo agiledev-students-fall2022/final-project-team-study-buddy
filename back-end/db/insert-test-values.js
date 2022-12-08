@@ -65,8 +65,8 @@ const testResources = [
     comments: [
       {
         _id: 0,
-        username: 'Pat Bradford',
-        body: "I visited here for an internet work space, and this place did the trick. The signal was good, sign into the wireless network was easy, so overall it served that purpose. I also wanted to check out this old, uniquely designed building. it is a small space with an almost circular floor plan. So it's a bit interesting and cool. Don't expect to see much from the upstairs windows, many of them have been boarded up with gaskets for wind tubes for ventilation. The circular architecture is unique but this place is a working space so, there's not much done to highlight it. There are community use rooms in the basement, that you won't see entering the main level, I assume they are able to be reserved, which, if so, is convenient and useful.",
+        username: 'Brandon Somoza',
+        body: "This place is phenomenal",
         parentId: null,
         createdAt: '2021-05-01T00:00:00.000Z'
       }
@@ -122,8 +122,8 @@ const testResources = [
     comments: [
       {
         _id: 0,
-        username: 'Pat Bradford',
-        body: "I visited here for an internet work space, and this place did the trick. The signal was good, sign into the wireless network was easy, so overall it served that purpose. I also wanted to check out this old, uniquely designed building. it is a small space with an almost circular floor plan. So it's a bit interesting and cool. Don't expect to see much from the upstairs windows, many of them have been boarded up with gaskets for wind tubes for ventilation. The circular architecture is unique but this place is a working space so, there's not much done to highlight it. There are community use rooms in the basement, that you won't see entering the main level, I assume they are able to be reserved, which, if so, is convenient and useful.",
+        username: 'Joey M',
+        body: "This place is pretty amazing.",
         parentId: null,
         createdAt: '2021-05-01T00:00:00.000Z'
       }

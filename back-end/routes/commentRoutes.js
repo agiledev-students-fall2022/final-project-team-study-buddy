@@ -7,9 +7,6 @@ const { escapeHtml } = require('markdown-it/lib/common/utils')
 const { body, validationResult } = require('express-validator')
 const router = express.Router()
 router.use(express.json())
-// const { router } = require('../app');
-
-// const testData = require('../test/testData.json');
 
 // ROUTES
 
@@ -22,7 +19,6 @@ router.get('/:resourceID', async (req, res) => {
     return res.status(400).json({ message: 'Invalid resource ID.' })
   }
 
-  // const resource = testData.filter((oneResource)=> oneResource.id === lid)
   const resource = await getResourceApi(lid)
 
   if (resource === null) {
