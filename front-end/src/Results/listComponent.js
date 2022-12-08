@@ -76,10 +76,9 @@ function ListComponent (props) {
             <img src={studyLogo} id='filter-logo' />
             )}
       </div>
-      {focus === 0
-        ? null 
-        :
-          (
+      {focus === 0 
+        ? null
+        : (
             <div>
               <p>{address}</p>
               <p>{description}</p>
