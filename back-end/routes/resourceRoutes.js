@@ -42,6 +42,15 @@ router.get("/:resourceID", async (req, res) => {
   return getData();
 });
 
+let printerUp = false;
+let printerDown = false;
+let wifiUp = false;
+let wifiDown = false;
+let studyUp = false;
+let studyDown = false;
+let accessibleUp = false;
+let accessibleDown = false;
+
 router.post(
   "/:resourceID/vote",
   body("type").isIn(["wifi", "printer", "study", "accessible"]),
@@ -51,7 +60,6 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    // console.log(req.body);
     const id = req.params.resourceID;
     const direction = req.body.direction;
     const type = req.body.type;
@@ -73,28 +81,77 @@ router.post(
 
     if (type == "printer") {
       if (direction == "down") {
-        result.ratings.printer = result.ratings.printer - 1;
+        if (printerDown === false){
+          result.ratings.printer = result.ratings.printer - 1;
+          printerDown = true;
+          printerUp = false;
+        }
+        // result.ratings.printer = result.ratings.printer - 1;
       } else {
-        result.ratings.printer = result.ratings.printer + 1;
+        if (printerUp === false){
+          result.ratings.printer = result.ratings.printer + 1;
+          printerDown = false;
+          printerUp = true;
+        }
+        // result.ratings.printer = result.ratings.printer + 1;
       }
     } else if (type == "wifi") {
       if (direction == "down") {
-        result.ratings.network = result.ratings.network - 1;
+        if (wifiDown === false){
+          result.ratings.network = result.ratings.network - 1;
+          wifiDown = true;
+          wifiUp = false;
+        }
       } else {
-        result.ratings.network = result.ratings.network + 1;
+        if (wifiUp === false){
+          result.ratings.network = result.ratings.network + 1;
+          wifiDown = false;
+          wifiUp = true;
+        }
       }
+      // if (direction == "down") {
+      //   result.ratings.network = result.ratings.network - 1;
+      // } else {
+      //   result.ratings.network = result.ratings.network + 1;
+      // }
     } else if (type == "study") {
       if (direction == "down") {
-        result.ratings.quiet = result.ratings.quiet - 1;
+        if (studyDown === false){
+          result.ratings.quiet = result.ratings.quiet - 1;
+          studyDown = true;
+          studyUp = false;
+        }
       } else {
-        result.ratings.quiet = result.ratings.quiet + 1;
+        if (studyUp === false){
+          result.ratings.quiet = result.ratings.quiet + 1;
+          studyDown = false;
+          studyUp = true;
+        }
       }
+      // if (direction == "down") {
+      //   result.ratings.quiet = result.ratings.quiet - 1;
+      // } else {
+      //   result.ratings.quiet = result.ratings.quiet + 1;
+      // }
     } else if (type == "accessible") {
       if (direction == "down") {
-        result.ratings.accessibility = result.ratings.accessibility - 1;
+        if (accessibleDown === false){
+          result.ratings.accessibility = result.ratings.accessibility - 1;
+          accessibleDown = true;
+          accessibleUp = false;
+        }
       } else {
-        result.ratings.accessibility = result.ratings.accessibility + 1;
+        if (accessibleUp === false){
+          result.ratings.accessibility = result.ratings.accessibility + 1;
+          accessibleDown = false;
+          accessibleUp = true;
+        }
       }
+      // if (direction == "down") {
+      //   result.ratings.accessibility = result.ratings.accessibility - 1;
+      // } else {
+      //   result.ratings.accessibility = result.ratings.accessibility + 1;
+      // }
     }
 
     await result.save();
