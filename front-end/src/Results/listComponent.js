@@ -86,7 +86,7 @@ function ListComponent (props) {
               <b onClick={() => { window.location.href = `/more?resource_id=${rid}` }}>Learn More</b>
             </details>
           </div>
-        )}
+          )}
       {/* <p>{address}</p>
       <p>{description}</p> */}
     </div>
