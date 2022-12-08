@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- textlint-disable -->
+
 # Sprint Planning
 
 Scrum follows a specific process by which teams plan the work that will be done in a given sprint.
