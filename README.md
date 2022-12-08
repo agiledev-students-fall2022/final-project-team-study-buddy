@@ -16,6 +16,7 @@ At its most basic implementation, *Study Buddy* will be a web app able to show s
 - Brandon Somoza: [GitHub](https://github.com/BrandonSomoza)
 - Kevin Wu: [GitHub](https://github.com/kevin1289) | [Python Anywhere](https://kevinwu.pythonanywhere.com/)
 - Abigail Zhou: [GitHub](https://github.com/abigailzhou03)
+- Nico Bykhovsky: [GitHub](https://github.com/Bykho-git)
 
 ## Project History
 
