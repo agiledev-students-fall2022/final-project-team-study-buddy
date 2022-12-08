@@ -15,22 +15,22 @@ const Comment = ({
 }) => {
   const isEditing =
     activeComment &&
-    activeComment.id === comment.id &&
+    activeComment._id === comment._id &&
     activeComment.type === 'editing'
   const isReplying =
     activeComment &&
-    activeComment.id === comment.id &&
+    activeComment._id === comment._id &&
     activeComment.type === 'replying'
   const fiveMinutes = 300000
   const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes
   const canDelete =
-    currentUserId === comment.userId && replies.length === 0 && !timePassed
+    currentUserId === comment._id && replies.length === 0 && !timePassed
   const canReply = Boolean(currentUserId)
-  const canEdit = currentUserId === comment.userId && !timePassed
-  const replyId = parentId || comment.id
+  const canEdit = currentUserId === comment._id && !timePassed
+  const replyId = parentId || comment._id
   const createdAt = new Date(comment.createdAt).toLocaleDateString()
   return (
-    <div key={comment.id} className='comment'>
+    <div key={comment._id} className='comment'>
       <div className='comment-image-container'>
         <img src={userIcon} alt='User Icon' />
       </div>
@@ -45,7 +45,7 @@ const Comment = ({
             submitLabel='Update'
             hasCancelButton
             initialText={comment.body}
-            handleSubmit={(text) => updateComment(text, comment.id)}
+            handleSubmit={(text) => updateComment(text, comment._id)}
             handleCancel={() => {
               setActiveComment(null)
             }}
@@ -56,7 +56,7 @@ const Comment = ({
             <div
               className='comment-action'
               onClick={() =>
-                setActiveComment({ id: comment.id, type: 'replying' })}
+                setActiveComment({ _id: comment._id, type: 'replying' })}
             >
               Reply
             </div>
@@ -65,7 +65,7 @@ const Comment = ({
             <div
               className='comment-action'
               onClick={() =>
-                setActiveComment({ id: comment.id, type: 'editing' })}
+                setActiveComment({ _id: comment._id, type: 'editing' })}
             >
               Edit
             </div>
@@ -73,7 +73,7 @@ const Comment = ({
           {canDelete && (
             <div
               className='comment-action'
-              onClick={() => deleteComment(comment.id)}
+              onClick={() => deleteComment(comment._id)}
             >
               Delete
             </div>
@@ -90,13 +90,13 @@ const Comment = ({
             {replies.map((reply) => (
               <Comment
                 comment={reply}
-                key={reply.id}
+                key={reply._id}
                 setActiveComment={setActiveComment}
                 activeComment={activeComment}
                 updateComment={updateComment}
                 deleteComment={deleteComment}
                 addComment={addComment}
-                parentId={comment.id}
+                parentId={comment._id}
                 replies={[]}
                 currentUserId={currentUserId}
               />
