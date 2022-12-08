@@ -44,9 +44,8 @@ function More () {
             console.log('res: ', res.data.ratings.printer)
             setTitle(res.data.name)
             setAddress(res.data.address)
-            setZIP(res.data.zip)
+            // setZIP(res.data.zip)
             setDescription(res.data.description)
-
             // replacing spaces with %20
             setWebsite(res.data.website.replaceAll(' ', '%20'))
             setMapURL(res.data.mapUrl.replaceAll(' ', '%20'))

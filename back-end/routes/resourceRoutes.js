@@ -101,7 +101,7 @@ router.post(
           wifiUp = false
         }
       } else {
-        if (wifiUp === false){
+        if (wifiUp === false) {
           result.ratings.network = result.ratings.network + 1
           wifiDown = false
           wifiUp = true
@@ -120,7 +120,7 @@ router.post(
           studyUp = false
         }
       } else {
-        if (studyUp === false){
+        if (studyUp === false) {
           result.ratings.quiet = result.ratings.quiet + 1
           studyDown = false
           studyUp = true
@@ -139,7 +139,7 @@ router.post(
           accessibleUp = false
         }
       } else {
-        if (accessibleUp === false){
+        if (accessibleUp === false) {
           result.ratings.accessibility = result.ratings.accessibility + 1
           accessibleDown = false
           accessibleUp = true
