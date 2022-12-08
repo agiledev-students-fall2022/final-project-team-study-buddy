@@ -76,18 +76,17 @@ function ListComponent (props) {
             <img src={studyLogo} id='filter-logo' />
             )}
       </div>
-      {focus == 0
-        ? null
-        : (
-          <div>
-            <p>{address}</p>
-            <p>{description}</p>
-            <details>
-              <summary id='button'>Learn More</summary>
-              <p><button id='button'>Google Maps</button><button id='button'>Reviews</button><button id='button'>Comment</button></p>
-            </details>
-          </div>
-          )}
+      {focus == 0 ? null : (
+        <div>
+          <p>{address}</p>
+          <p>{description}</p>
+          <details>
+
+            <b onClick={() => window.location.href = '/more?resource_id=${rid}'}>Learn More</b>
+            
+          </details>
+        </div>
+      )}
       {/* <p>{address}</p>
       <p>{description}</p> */}
     </div>
