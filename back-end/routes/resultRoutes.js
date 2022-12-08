@@ -1,5 +1,5 @@
 const express = require('express')
-router = express.Router()
+const router = express.Router()
 
 const testData = require('../test/testData.json')
 
@@ -18,7 +18,6 @@ router.get('/:zip', (req, res) => {
     return res.status(400).json({ error: 'Invalid ZIP requested.' })
   }
   const zip = parseInt(req.params.zip)
-  const { wifi, printer, study } = req.params // TO-DO: make sure this is correct
   const results = []
   testData.forEach(place => { // sprint 3: query database to get stored places of matching criteria
     if (place.zip === zip) {

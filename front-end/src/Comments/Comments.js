@@ -13,7 +13,7 @@ const Comments = ({ currentUserId }) => {
   const params = new URLSearchParams(window.location.search)
   const resId = params.get('resource_id')
 
-  const [resourceID, setResourceID] = useState(resId)
+  const resourceID = resId
   const [backendComments, setBackendComments] = useState([])
   const [activeComment, setActiveComment] = useState(null)
   const rootComments = backendComments

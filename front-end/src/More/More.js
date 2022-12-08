@@ -24,6 +24,8 @@ function More () {
   const [mapURL, setMapURL] = useState('')
   const [zip, setZIP] = useState('')
 
+  console.log(zip)
+
   const [error, setError] = useState('')
 
   const params = new URLSearchParams(window.location.search)
@@ -67,6 +69,7 @@ function More () {
       `http://${process.env.REACT_APP_SERVER_URL}/resource/${id}/vote`,
       data
     )
+    console.log(res)
     if (type === 'printer') {
       if (dir === 'down') {
         setPrinterVotes(printerVotes - 1)

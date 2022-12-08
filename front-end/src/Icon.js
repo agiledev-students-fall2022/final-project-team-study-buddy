@@ -26,13 +26,13 @@ const icons = {
 }
 
 const Icon = props => {
-  const { type, in_form } = props
+  const { type, inForm } = props
   const [state, setState] = useState(props.state ?? 'inactive')
   console.log(icons[type][state] === (icons[type][state === 'active' ? 'inactive' : 'active']))
   return (
     <>
       <img className='icon' alt={type} state={state} onClick={() => { state === 'inactive' ? setState('active') : setState('inactive') }} src={icons[type][state]} />
-      {in_form === 'yes' ? <input type='hidden' name={type} value={state === 'active' ? 'yes' : 'no'} /> : ''}
+      {inForm === 'yes' ? <input type='hidden' name={type} value={state === 'active' ? 'yes' : 'no'} /> : ''}
     </>
   )
 }

@@ -31,9 +31,9 @@ function ListComponent (props) {
   return (
     <div id='Result'>
       <div id='result-name'>
-        <b onClick={() => window.location.href = `/more?resource_id=${rid}`}>{name}</b>
+        <b onClick={() => {window.location.href = `/more?resource_id=${rid}`}}>{name}</b>
         <div id='results-toggle-wrapper'>
-          {focus == 0
+          {focus === 0
             ? (
               <img
                 src={plus}
@@ -54,21 +54,21 @@ function ListComponent (props) {
         id='results-logos'
         onClick={() => window.location.href = '/more'}
       >
-        {printer == 0
+        {printer === 0
           ? (
             <img src={printerLogoBlur} id='filter-logo' />
             )
           : (
             <img src={printerLogo} id='filter-logo' />
             )}
-        {wifi == 0
+        {wifi === 0
           ? (
             <img src={wifiLogoBlur} id='filter-logo' />
             )
           : (
             <img src={wifiLogo} id='filter-logo' />
             )}
-        {study == 0
+        {study === 0
           ? (
             <img src={studyLogoBlur} id='filter-logo' />
             )
@@ -76,17 +76,16 @@ function ListComponent (props) {
             <img src={studyLogo} id='filter-logo' />
             )}
       </div>
-      {focus == 0 ? null : (
-        <div>
-          <p>{address}</p>
-          <p>{description}</p>
-          <details>
-
-            <b onClick={() => window.location.href = '/more?resource_id=${rid}'}>Learn More</b>
-            
-          </details>
-        </div>
-      )}
+      {focus === 0 ? 
+        null : (
+          <div>
+            <p>{address}</p>
+            <p>{description}</p>
+            <details>
+              <b onClick={() => {window.location.href = '/more?resource_id=${rid}'}}>Learn More</b>
+            </details>
+          </div>
+          )}
       {/* <p>{address}</p>
       <p>{description}</p> */}
     </div>

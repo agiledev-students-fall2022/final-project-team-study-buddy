@@ -1,10 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const testData = require('../test/testData.json')
 const ResourceModel = require('../db/schema')
-
-const mongoose = require('mongoose')
 
 const { body, validationResult } = require('express-validator')
 
@@ -71,26 +68,26 @@ router.post(
     let result = await Resource.find({ _id: id })
     result = result[0]
 
-    if (type == 'printer') {
-      if (direction == 'down') {
+    if (type === 'printer') {
+      if (direction === 'down') {
         result.ratings.printer = result.ratings.printer - 1
       } else {
         result.ratings.printer = result.ratings.printer + 1
       }
-    } else if (type == 'wifi') {
-      if (direction == 'down') {
+    } else if (type === 'wifi') {
+      if (direction === 'down') {
         result.ratings.network = result.ratings.network - 1
       } else {
         result.ratings.network = result.ratings.network + 1
       }
-    } else if (type == 'study') {
-      if (direction == 'down') {
+    } else if (type === 'study') {
+      if (direction === 'down') {
         result.ratings.quiet = result.ratings.quiet - 1
       } else {
         result.ratings.quiet = result.ratings.quiet + 1
       }
-    } else if (type == 'accessible') {
-      if (direction == 'down') {
+    } else if (type === 'accessible') {
+      if (direction === 'down') {
         result.ratings.accessibility = result.ratings.accessibility - 1
       } else {
         result.ratings.accessibility = result.ratings.accessibility + 1

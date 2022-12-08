@@ -1,3 +1,7 @@
+<!-- markdownlint-disable -->
+<!-- textlint-disable -->
+
+
 # Deployment
 
 Each team must deploy their completed software applications to a [Digital Ocean Droplet](https://www.digitalocean.com/products/droplets/).

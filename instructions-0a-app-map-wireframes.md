@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- textlint-disable -->
+
 # App Map & Wireframes
 
 Create an **app map** and a complete set of **wireframe diagrams** for the [Minimum Viable Product](https://en.wikipedia.org/wiki/Minimum_viable_product) (MVP) of your application.

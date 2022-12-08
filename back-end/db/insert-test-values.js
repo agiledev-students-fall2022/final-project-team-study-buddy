@@ -2,9 +2,10 @@ const ResourceModel = require('./schema')
 
 let testResource = {}
 
+
 const InsertTestValues = async () => {
   for (let index = 0; index < 5; index++) {
-    resourceExists = await ResourceModel.exists({ _id: index })
+    let resourceExists = await ResourceModel.exists({ _id: index })
 
     if (resourceExists) {
       console.log(`Resource ${index} already exists`)

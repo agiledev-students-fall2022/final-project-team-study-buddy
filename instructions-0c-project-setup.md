@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- textlint-disable -->
+
 # Project Kickoff
 
 Every individual and group must complete the following kickoff process to have the tools setup to allow them to collaborate effectively on team projects.

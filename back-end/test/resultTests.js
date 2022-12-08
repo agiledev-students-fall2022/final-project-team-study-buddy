@@ -8,6 +8,7 @@ const chaiHttp = require('chai-http')
 chai.use(chaiHttp) // use the chai-http middleware to simplify testing routes
 const expect = chai.expect // the assertion library in the style using the word 'expect'
 const should = chai.should() // the same assertion library in the style using the word 'should'
+console.log(should) // the same assertion library in the style using the word 'should'
 
 // import the server
 const server = require('../app')
@@ -25,6 +26,7 @@ describe('/results', () => {
         .get('/results/10012')
         .end((err, res) => {
           expect(res.status, 200)
+          console.log(err)
           // res.json.should.be.a("object") // our route sends back an object
           // res.json.should.have.keys("id", "name", "address", "printer", "wifi", "study", "description", "rating", "comments")
           // expect(res.body).to.have.deep.property("user.id", 1) // check for exact value of a nested value
@@ -40,6 +42,7 @@ describe('/results', () => {
         .get('/results')
         .end((err, res) => {
           expect(res.status, 400)
+          console.log(err)
           done() // resolve the Promise that these tests create so mocha can move on
         })
     })
@@ -50,6 +53,7 @@ describe('/results', () => {
         .get('/results/99999')
         .end((err, res) => {
           expect(res.status, 404)
+          console.log(err)
           done() // resolve the Promise that these tests create so mocha can move on
         })
     })
