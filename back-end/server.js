@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 require('dotenv').config(); // configure .env
 const server = require("./app"); // load up the web server
 const port = 3001; // the port to listen to for incoming requests
