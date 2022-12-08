@@ -48,7 +48,7 @@ router.post('/add', body('comment').isLength({ min: 2 }), body('locationID').isN
   const newComment = {
     _id: resource.comments.length + 1,
     body: escapeHtml(req.body.comment),
-    username: 'Test User',
+    username: 'Anonymous',
     userId: '2',
     parentId: pidInt,
     createdAt: Date.now()
