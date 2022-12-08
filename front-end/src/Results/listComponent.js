@@ -31,7 +31,7 @@ function ListComponent (props) {
   return (
     <div id='Result'>
       <div id='result-name'>
-        <b onClick={() => {window.location.href = `/more?resource_id=${rid}`}}>{name}</b>
+        <b onClick={() => { window.location.href = `/more?resource_id=${rid}` }}>{name}</b>
         <div id='results-toggle-wrapper'>
           {focus === 0
             ? (
@@ -52,7 +52,7 @@ function ListComponent (props) {
       </div>
       <div
         id='results-logos'
-        onClick={() => window.location.href = '/more'}
+        onClick={() => { window.location.href = '/more' }}
       >
         {printer === 0
           ? (
@@ -76,16 +76,17 @@ function ListComponent (props) {
             <img src={studyLogo} id='filter-logo' />
             )}
       </div>
-      {focus === 0 ? 
-        null : (
+      {focus === 0
+        ? null :
+        (
           <div>
             <p>{address}</p>
             <p>{description}</p>
             <details>
-              <b onClick={() => {window.location.href = '/more?resource_id=${rid}'}}>Learn More</b>
+              <b onClick={() => { window.location.href = `/more?resource_id=${rid}` }}>Learn More</b>
             </details>
           </div>
-          )}
+        )}
       {/* <p>{address}</p>
       <p>{description}</p> */}
     </div>

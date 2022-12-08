@@ -24,14 +24,6 @@ router.get('/:zip', (req, res) => {
       results.push(place)
     }
   })
-    const zip = parseInt(req.params.zip);
-    const {wifi, printer, study} = req.params;
-    let results = [];
-    testData.forEach(place => { 
-        if (place.zip === zip) {
-            results.push(place);
-        }
-    });
 
   if (results.length > 0) {
     return res.json({ results }) // return data in usable format

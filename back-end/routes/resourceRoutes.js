@@ -77,25 +77,25 @@ router.post(
     let result = await Resource.find({ _id: id })
     result = result[0]
 
-    if (type == "printer") {
-      if (direction == "down") {
-        if (printerDown === false){
+    if (type === 'printer') {
+      if (direction === 'down') {
+        if (printerDown === false) {
           result.ratings.printer = result.ratings.printer - 1
           printerDown = true
           printerUp = false
         }
         // result.ratings.printer = result.ratings.printer - 1;
       } else {
-        if (printerUp === false){
+        if (printerUp === false) {
           result.ratings.printer = result.ratings.printer + 1
           printerDown = false
           printerUp = true
         }
         // result.ratings.printer = result.ratings.printer + 1;
       }
-    } else if (type == "wifi") {
-      if (direction == "down") {
-        if (wifiDown === false){
+    } else if (type === 'wifi') {
+      if (direction === 'down') {
+        if (wifiDown === false) {
           result.ratings.network = result.ratings.network - 1
           wifiDown = true
           wifiUp = false
@@ -112,9 +112,9 @@ router.post(
       // } else {
       //   result.ratings.network = result.ratings.network + 1;
       // }
-    } else if (type == "study") {
-      if (direction == "down") {
-        if (studyDown === false){
+    } else if (type === 'study') {
+      if (direction === 'down') {
+        if (studyDown === false) {
           result.ratings.quiet = result.ratings.quiet - 1
           studyDown = true
           studyUp = false
@@ -131,9 +131,9 @@ router.post(
       // } else {
       //   result.ratings.quiet = result.ratings.quiet + 1;
       // }
-    } else if (type == "accessible") {
-      if (direction == "down") {
-        if (accessibleDown === false){
+    } else if (type === 'accessible') {
+      if (direction === 'down') {
+        if (accessibleDown === false) {
           result.ratings.accessibility = result.ratings.accessibility - 1
           accessibleDown = true
           accessibleUp = false

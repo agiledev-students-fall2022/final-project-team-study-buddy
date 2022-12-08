@@ -2,10 +2,9 @@ const ResourceModel = require('./schema')
 
 let testResource = {}
 
-
 const InsertTestValues = async () => {
   for (let index = 0; index < 5; index++) {
-    let resourceExists = await ResourceModel.exists({ _id: index })
+    const resourceExists = await ResourceModel.exists({ _id: index })
 
     if (resourceExists) {
       console.log(`Resource ${index} already exists`)
@@ -66,7 +65,7 @@ const testResources = [
       {
         _id: 0,
         username: 'Brandon Somoza',
-        body: "This place is phenomenal",
+        body: 'This place is phenomenal',
         parentId: null,
         createdAt: '2021-05-01T00:00:00.000Z'
       }
@@ -123,7 +122,7 @@ const testResources = [
       {
         _id: 0,
         username: 'Joey M',
-        body: "This place is pretty amazing.",
+        body: 'This place is pretty amazing.',
         parentId: null,
         createdAt: '2021-05-01T00:00:00.000Z'
       }

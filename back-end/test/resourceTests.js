@@ -10,7 +10,6 @@ const expect = chai.expect // the assertion library in the style using the word 
 const should = chai.should() // the same assertion library in the style using the word 'should'
 console.log(should) // the same assertion library in the style using the word 'should'
 
-
 // import the server
 const server = require('../app')
 

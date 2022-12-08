@@ -40,8 +40,8 @@ router.post('/add', body('comment').isLength({ min: 2 }), body('locationID').isN
     return res.status(400).json({ message: 'Invalid comment.' })
   }
 
-const pidInt = Number.parseInt(req.body.parentId)
-pidInt = [undefined, null, ''].includes(req.body.parentId) || lid === 0 || Number.isNaN(lid) ? null : pidInt
+  let pidInt = Number.parseInt(req.body.parentId)
+  pidInt = [undefined, null, ''].includes(req.body.parentId) || lid === 0 || Number.isNaN(lid) ? null : pidInt
 
   const resource = await getResourceApi(lid)
 

@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react"
-import "../More/More.css"
-import axios from "axios"
-import Comments from "../Comments/Comments"
-import logo from "../More/img/study-buddy-logo.png"
-import upvote from "../More/img/upvote.png"
-import printer from "../More/img/printer.png"
-import blackGlobe from "../More/img/black_globe.png"
-import blueGlobe from "../More/img/blue_globe.png"
-import silence from "../More/img/silence.png"
-import wheelchair from "../More/img/wheelchair.png"
+import React, { useEffect, useState } from 'react'
+import '../More/More.css'
+import axios from 'axios'
+import Comments from '../Comments/Comments'
+import logo from '../More/img/study-buddy-logo.png'
+import upvote from '../More/img/upvote.png'
+import printer from '../More/img/printer.png'
+import blackGlobe from '../More/img/black_globe.png'
+import blueGlobe from '../More/img/blue_globe.png'
+import silence from '../More/img/silence.png'
+import wheelchair from '../More/img/wheelchair.png'
 
 let printerUp = false
 let printerDown = false
@@ -19,22 +19,21 @@ let studyDown = false
 let accessibleUp = false
 let accessibleDown = false
 
-function More() {
-  const [printerVotes, setPrinterVotes] = useState(0);
-  const [wifiVotes, setWifiVotes] = useState(0);
-  const [quietVotes, setQuietVotes] = useState(0);
-  const [accessibilityVotes, setAccessibilityVotes] = useState(0);
-  const [title, setTitle] = useState("");
-  const [address, setAddress] = useState("");
-  const [website, setWebsite] = useState("");
-  const [description, setDescription] = useState("");
-  const [mapURL, setMapURL] = useState("");
-  const [zip, setZIP] = useState("");
+function More () {
+  const [printerVotes, setPrinterVotes] = useState(0)
+  const [wifiVotes, setWifiVotes] = useState(0)
+  const [quietVotes, setQuietVotes] = useState(0)
+  const [accessibilityVotes, setAccessibilityVotes] = useState(0)
+  const [title, setTitle] = useState('')
+  const [address, setAddress] = useState('')
+  const [website, setWebsite] = useState('')
+  const [description, setDescription] = useState('')
+  const [mapURL, setMapURL] = useState('')
 
-  const [error, setError] = useState("");
+  const [error, setError] = useState('')
 
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("resource_id");
+  const params = new URLSearchParams(window.location.search)
+  const id = params.get('resource_id')
 
   useEffect(() => {
     const fetchResults = async () => {
@@ -70,48 +69,48 @@ function More() {
       type
     }
 
-    const res = await axios.post(
+    await axios.post(
       `http://${process.env.REACT_APP_SERVER_URL}/resource/${id}/vote`,
       data
-    );
+    )
 
-    if (type === "printer") {
-      if (dir === "down") {
-        if(printerDown === false){
+    if (type === 'printer') {
+      if (dir === 'down') {
+        if (printerDown === false) {
           setPrinterVotes(printerVotes - 1)
           printerDown = true
           printerUp = false
         }
       } else {
-        if(printerUp === false){
+        if (printerUp === false) {
           setPrinterVotes(printerVotes + 1)
           printerUp = true
           printerDown = false
         }
       }
-    } else if (type === "wifi") {
-      if (dir === "down") {
-        if(wifiDown === false){
+    } else if (type === 'wifi') {
+      if (dir === 'down') {
+        if (wifiDown === false) {
           setWifiVotes(wifiVotes - 1)
           wifiDown = true
           wifiUp = false
         }
       } else {
-        if(wifiUp === false){
+        if (wifiUp === false) {
           setWifiVotes(wifiVotes + 1)
           wifiDown = false
           wifiUp = true
         }
       }
-    } else if (type === "study") {
-      if (dir === "down") {
-        if(studyDown === false){
+    } else if (type === 'study') {
+      if (dir === 'down') {
+        if (studyDown === false) {
           setQuietVotes(quietVotes - 1)
           studyDown = true
           studyUp = false
         }
       } else {
-        if(studyUp === false){
+        if (studyUp === false) {
           setQuietVotes(quietVotes + 1)
           studyDown = false
           studyUp = true
@@ -122,15 +121,15 @@ function More() {
       // } else {
       //   setQuietVotes(quietVotes + 1);
       // }
-    } else if (type === "accessible") {
-      if (dir === "down") {
-        if(accessibleDown === false){
+    } else if (type === 'accessible') {
+      if (dir === 'down') {
+        if (accessibleDown === false) {
           setAccessibilityVotes(accessibilityVotes - 1)
           accessibleDown = true
           accessibleUp = false
         }
       } else {
-        if(accessibleUp === false){
+        if (accessibleUp === false) {
           setAccessibilityVotes(accessibilityVotes + 1)
           accessibleDown = false
           accessibleUp = true

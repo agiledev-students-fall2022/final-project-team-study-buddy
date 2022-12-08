@@ -40,7 +40,7 @@ function Results () {
 
   const resultShower = () => {
     let status = false
-    console.log("data: ", data.results)
+    console.log('data: ', data.results)
     return data.results.map((result, id) => {
       status =
         (printer && result.printer) ||
