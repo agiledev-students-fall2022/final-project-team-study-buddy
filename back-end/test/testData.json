@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "name": "Elmer Holmes Bobst Library",
+        "address": "70 Washington Square S, New York, NY 10012",
+        "zip": 10012,
+        "website": "https://library.nyu.edu/locations/elmer-holmes-bobst-library/",
+        "description": "The Elmer Holmes Bobst Library, often referred to as simply Bobst Library or Bobst, is the main library at New York University in Manhattan, New York City.",
+        "printer": 1,
+        "wifi": 1,
+        "study": 1,
+        "accessibility": 1,
+        "rating": 4.5,
+        "comments": [
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jack",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "John",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 3,
+                "body": "First comment first child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 1,
+                "createdAt": 1629169233010
+            },
+            {
+                "id": 4,
+                "body": "Second comment second child",
+                "username": "John",
+                "userId": 2,
+                "parentId": 2,
+                "createdAt": 1629169233010
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "El Barrista Cafe",
+        "address": "2154 3rd Ave, New York, NY 10035",
+        "zip": 10035,
+        "website": "https://www.instagram.com/elbarristanyc",
+        "description": "A cafe in East Harlem offering free Wi-Fi.",
+        "printer": 0,
+        "wifi": 1,
+        "study": 0,
+        "accessibility": 1,
+        "rating": 4.5,
+        "comments": [
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Jillian",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233015
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Kimmel Center for University Life",
+        "address": "60 Washington Square S, New York, NY 10012",
+        "zip": 10012,
+        "website": "https://www.nyu.edu/life/campus-resources/kimmel-center.html",
+        "description": "Located at the heart of the NYU campus, the Kimmel Center provides space and resources for students, faculty, staff, departments, alumni, and community organizations. Visitors have access to NYU Dining, Peet’s Coffee, the adjacent Global Center for Academic & Spiritual Life, and a breathtaking view of Washington Square Park.",
+        "printer": 1,
+        "wifi": 1,
+        "study": 1,
+        "accessibility": 1,
+        "rating": 4.5,
+        "comments": [
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Matt",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233017
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "Mike",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233012
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "My Quiet Cafe",
+        "address": "2152 3rd Ave, New York, NY 10035",
+        "zip": 10035,
+        "website": "https://example.com/",
+        "description": "Lorem ipsum yada yada... this place has Wi-Fi and a quiet study space.",
+        "printer": 0,
+        "wifi": 1,
+        "study": 1,
+        "accessibility": 1,
+        "rating": 4.5,
+        "comments": [
+            {
+                "id": 1,
+                "body": "First comment",
+                "username": "Harold",
+                "userId": 1,
+                "parentId": null,
+                "createdAt": 1629169233019
+            },
+            {
+                "id": 2,
+                "body": "Second comment",
+                "username": "Mindy",
+                "userId": 2,
+                "parentId": null,
+                "createdAt": 1629169233013
+            }
+        ]
+    }
+]

@@ -1,0 +1,85 @@
+/* stylelint-disable */
+
+#Result {
+  display: block;
+  outline: solid;
+  outline-color: gray;
+  outline-width: 2px;
+  text-align: left;
+  padding-bottom: 4px;
+  text-align: left;
+  padding-left: 5px;
+  /* margin-left: 5px;
+  margin-right: 5px; */
+  width: 90vw;
+  margin: auto;
+}
+
+#results-logos {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+}
+
+#filter-logo {
+  display: block;
+  width: 2vw;
+  height: 4vh;
+}
+
+#result-name {
+  padding-top: 2px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  /* cursor: pointer; */
+}
+
+#result-name b {
+  text-align: left;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#results-toggle-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: right;
+  height: 30px;
+}
+
+#results-toggle-plus {
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#results-toggle-minus {
+  margin-right: 10px;
+  margin-top: 20px;
+  width: 30px;
+  height: 7px;
+  cursor: pointer;
+}
+
+#button{
+  padding: 10px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: lightgray;
+  border: none;
+  border-radius: 15px;
+}
+#button:hover {text-decoration: underline}
+
+#button:active {
+  background-color: gray;
+  transform: translateY(2px);
+}

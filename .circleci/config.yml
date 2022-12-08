@@ -1,3 +1,4 @@
+---
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
@@ -7,9 +8,9 @@ jobs:
   build-and-test-express-js:
     docker:
       - image: cimg/node:16.13.0 # latest stable node at the time of writing
-        # auth:
-        #   username: mydockerhub-user
-        #   password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      # auth:
+      # username: mydockerhub-user
+      # password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
       - run: echo "this is the build and test express.js job"
@@ -24,9 +25,9 @@ jobs:
   build-react-js:
     docker:
       - image: cimg/node:16.13.0 # latest stable node at the time of writing
-        # auth:
-        #   username: mydockerhub-user
-        #   password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      # auth:
+      # username: mydockerhub-user
+      # password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
       - run: echo "this is the build react.js job"

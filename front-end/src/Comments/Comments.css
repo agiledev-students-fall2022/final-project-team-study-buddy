@@ -1,0 +1,160 @@
+/* stylelint-disable */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;900&display=swap');
+
+.comments {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .comments-title {
+    padding: 10px;
+    
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 50px;
+
+    color: #000000;
+  }
+  
+  .comments-container {
+    padding: 20px;
+  }
+  
+  .comment-form-title {
+    padding: 10px;
+
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 15px;
+
+    color: #000000;
+  }
+  
+  .comment-form-textarea {
+    width: 400px;
+    height: 80px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid rgb(107, 114, 12);
+  }
+  
+  .comment-form-button {
+    font-size: 15px;
+    padding: 8px 16px;
+    background: rgb(58, 58, 58);
+    color: white;
+
+    font-family: 'Inter';
+    font-style: normal;
+  }
+  
+  .comment-form-button:hover:enabled {
+    cursor: pointer;
+    background: rgb(37, 99, 235);
+  }
+  
+  .comment-form-button:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+  
+  .comment-form-cancel-button {
+    margin-left: 10px;
+  }
+  
+  .comment {
+    display: flex;
+    margin-bottom: 28px;
+  }
+  
+  .comment-image-container {
+    margin-right: 12px;
+  }
+  
+  .comment-image-container img {
+    border-radius: 50px;
+  }
+  
+  .comment-right-part {
+    width: 100%;
+  }
+  
+  .comment-content {
+    display: flex;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 30px;
+
+    color: #000000;
+  }
+  
+  .comment-author {
+    margin-right: 8px;
+    font-size: 15px;
+
+    display: flex;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+
+    color: rgb(80, 80, 80);
+  }
+
+  .comment-date {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+
+    color: #000000;
+  }
+  
+  .comment-text {
+    font-size: 15px;
+
+    text-align: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+
+    color: #000000;
+  }
+  
+  .comment-actions {
+    display: flex;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  
+  .comment-action {
+    margin-right: 8px;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+  }
+  
+  .comment-action:hover {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    text-decoration: underline;
+  }
+  
+  .replies {
+    margin-top: 20px;
+  }

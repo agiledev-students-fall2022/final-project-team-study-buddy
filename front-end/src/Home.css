@@ -1,0 +1,51 @@
+/* stylelint-disable */
+body {
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#home-container {
+    vertical-align: middle;
+    max-width: 95%;
+}
+
+h1.title {
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-family: Inter;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+input[type="text"] {
+    margin: auto 10px;
+    height: 30px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input[type="text"]::placeholder {
+    font-style: italic;
+}
+
+input[type="submit"] {
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: lowercase;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.logo{
+    width: 110px;
+}

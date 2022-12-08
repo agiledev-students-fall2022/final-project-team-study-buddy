@@ -1,0 +1,137 @@
+/* stylelint-disable */
+@font-face{
+    font-family: Inter;
+    src: url(../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+/* styling general html tags */ 
+#blurb {
+    font-size: 15px;
+    font-family: Inter;
+}
+
+.num {
+    text-align: center;
+    font-size: 20%;
+    font-family: Inter;
+}
+
+#title {
+    font-size: 38px;
+    font-family: Inter;
+    font-style: italic;
+}
+
+#location {
+    font-family: Inter;
+}
+
+/* styling map + details container */
+.more-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 100px;
+    padding-left: 70px;
+}
+
+.more-map {
+    text-align: left;
+    position: relative;
+    padding-bottom: 75%;
+    overflow: hidden;
+}
+
+.map iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65% !important;
+    height: 75% !important;
+}
+
+.more-details {
+    text-align: left;
+    width: 52%;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+#zip-code {
+    font-size: 18px;
+    font-family: Inter;
+    font-style: italic;
+}
+
+
+/* styling icons */
+.icon-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-rating{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumbs-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.placeholder{
+    height: 50%;
+    width: 50%;
+}
+
+.error-text {
+    text-align: center;
+    color: red;
+    size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.website-link{
+    height: 4%;
+    width: 4%;
+}
+
+.downvotes{
+    transform: rotate(180deg);
+    height: 70%;
+    width: 30%;
+}
+
+.upvotes{
+    height: 70%;
+    width: 30%;
+}
+
+.voteBtn{
+    padding: 0px;
+    margin: 0px;
+}
+
+.more-logo{
+    float: left;
+    height: 6%;
+    width: 6%;
+    padding-top: 40px;
+    padding-left: 60px;
+}
+
+.icon-container button {
+    border: none;
+    background: none;
+}
+
+@media (max-width: 650px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

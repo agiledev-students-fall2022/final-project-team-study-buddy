@@ -117,10 +117,13 @@ typings/
 # next.js build output
 .next
 
-
 ## Emacs artefacts ##
 *~
 
 ## Jekyll artifacts
 **/.jekyll-cache
 **/_site/
+
+## VSCode Files
+.vscode
+*.code_workspace

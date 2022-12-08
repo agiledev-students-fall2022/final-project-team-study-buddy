@@ -1,0 +1,23 @@
+# use node v16
+FROM node:16
+
+# establish working directory
+RUN mkdir -p /usr/src/study-buddy
+RUN mkdir -p /usr/src/study-buddy/back-end
+WORKDIR /usr/src/study-buddy/back-end
+
+# install app dependencies (use package.json AND package-lock.json)
+COPY package*.json ./
+
+# for development
+#RUN npm install
+# for production
+RUN npm ci --only=production
+
+# bundle app source
+COPY . .
+
+# allow access to server
+EXPOSE 3001
+
+CMD [ "npm", "start" ]
