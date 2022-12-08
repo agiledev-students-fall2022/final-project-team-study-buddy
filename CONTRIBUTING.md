@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- textlint-disable -->
+
 # Contributing
 
 ## Team Norms

@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- textlint-disable -->
+
 # Study Buddy
 
 Website Link: https://dolphin-app-tj6ou.ondigitalocean.app/

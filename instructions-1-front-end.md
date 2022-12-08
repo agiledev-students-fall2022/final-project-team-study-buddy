@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- textlint-disable -->
+
 # Front-End Development
 
 Each team must have completed and [demo'd](https://knowledge.kitchen/Scrum_development_framework#Demo_for_Stakeholders) the working front-end of their group project by the end of the corresponding Sprint.

@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- textlint-disable -->
+
 # Prototyping
 
 Create a clickable/tappable mobile prototype for the Minimum Viable Product (MVP) of your application. Use wireframe diagrams as the screens in the prototype.
