@@ -9,21 +9,30 @@ function Results() {
   const [printer, setPrinter] = useState(true);
   const [wifi, setWifi] = useState(true);
   const [study, setStudy] = useState(true);
-  const [data, setData] = useState({results: []});
+  const [data, setData] = useState({ results: [] });
 
   const params = new URLSearchParams(window.location.search);
 
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        console.log('zip: ' + params.get('query'));
+        console.log("zip: " + params.get("query"));
+        console.log(
+          `http://${process.env.REACT_APP_SERVER_URL}/results/${params.get(
+            "query"
+          )}`
+        );
         await axios
-          .get(`http://localhost:3001/results/${params.get('query')}`)
-          .then(res => setData(res.data));
+          .get(
+            `http://${process.env.REACT_APP_SERVER_URL}/results/${params.get(
+              "query"
+            )}`
+          )
+          .then((res) => setData(res.data));
       } catch (err) {
         console.error(err);
       }
-    }
+    };
     fetchResults();
     setPrinter(true);
     setWifi(true);
@@ -37,13 +46,10 @@ function Results() {
     // Set up below here an API call to the backend to display data from resultRoutes.js --NICO
     // What Kevin Wrote Before=> return testResults.map((result) => { --NICO
 
-    // const pipe = await axios.get("http://localhost:3001/results/12345");
-    //axios.get('http://localhost:3001/results/12345').then((result)=> {
-    //x = result.data})
     //This alert is just to show that the front end gets the correct data-- NICO
 
     // x = pipe.data;
-    console.log('data: ', data.results);
+    console.log("data: ", data.results);
     // return <div>HELLO</div>;
     return data.results.map((result, id) => {
       status =
@@ -79,7 +85,11 @@ function Results() {
         setStudy={() => setStudy(!study)}
       />
       <div id="result-shower">
-        {data.results.length === 0 ? <div>Error: No results were found for that ZIP code.</div> : resultShower()}
+        {data.results.length === 0 ? (
+          <div>Error: No results were found for that ZIP code.</div>
+        ) : (
+          resultShower()
+        )}
       </div>
     </div>
   );
