@@ -12,6 +12,15 @@ import blueGlobe from "../More/img/blue_globe.png";
 import silence from "../More/img/silence.png";
 import wheelchair from "../More/img/wheelchair.png";
 
+let printerUp = false;
+let printerDown = false;
+let wifiUp = false;
+let wifiDown = false;
+let studyUp = false;
+let studyDown = false;
+let accessibleUp = false;
+let accessibleDown = false;
+
 function More() {
   const [printerVotes, setPrinterVotes] = useState(0);
   const [wifiVotes, setWifiVotes] = useState(0);
@@ -67,30 +76,73 @@ function More() {
       `http://${process.env.REACT_APP_SERVER_URL}/resource/${id}/vote`,
       data
     );
+
     if (type === "printer") {
       if (dir === "down") {
-        setPrinterVotes(printerVotes - 1);
+        if(printerDown === false){
+          setPrinterVotes(printerVotes - 1);
+          printerDown = true;
+          printerUp = false;
+        }
       } else {
-        setPrinterVotes(printerVotes + 1);
+        if(printerUp === false){
+          setPrinterVotes(printerVotes + 1);
+          printerUp = true;
+          printerDown = false;
+        }
       }
     } else if (type === "wifi") {
       if (dir === "down") {
-        setWifiVotes(wifiVotes - 1);
+        if(wifiDown === false){
+          setWifiVotes(wifiVotes - 1);
+          wifiDown = true;
+          wifiUp = false;
+        }
       } else {
-        setWifiVotes(wifiVotes + 1);
+        if(wifiUp === false){
+          setWifiVotes(wifiVotes + 1);
+          wifiDown = false;
+          wifiUp = true;
+        }
       }
     } else if (type === "study") {
       if (dir === "down") {
-        setQuietVotes(quietVotes - 1);
+        if(studyDown === false){
+          setQuietVotes(quietVotes - 1);
+          studyDown = true;
+          studyUp = false;
+        }
       } else {
-        setQuietVotes(quietVotes + 1);
+        if(studyUp === false){
+          setQuietVotes(quietVotes + 1);
+          studyDown = false;
+          studyUp = true;
+        }
       }
+      // if (dir === "down") {
+      //   setQuietVotes(quietVotes - 1);
+      // } else {
+      //   setQuietVotes(quietVotes + 1);
+      // }
     } else if (type === "accessible") {
       if (dir === "down") {
-        setAccessibilityVotes(accessibilityVotes - 1);
+        if(accessibleDown === false){
+          setAccessibilityVotes(accessibilityVotes - 1);
+          accessibleDown = true;
+          accessibleUp = false;
+        }
       } else {
-        setAccessibilityVotes(accessibilityVotes + 1);
+        if(accessibleUp === false){
+          setAccessibilityVotes(accessibilityVotes + 1);
+          accessibleDown = false;
+          accessibleUp = true;
+        }
       }
+      // if (dir === "down") {
+      //   setAccessibilityVotes(accessibilityVotes - 1);
+      // } else {
+      //   setAccessibilityVotes(accessibilityVotes + 1);
+      // }
     }
   }
 
